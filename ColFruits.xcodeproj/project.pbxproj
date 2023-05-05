@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00EAC85C2A05661200279C6A /* ColFruitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC85B2A05661200279C6A /* ColFruitsApp.swift */; };
+		00EAC85E2A05661200279C6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC85D2A05661200279C6A /* ContentView.swift */; };
+		00EAC8602A05661400279C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EAC85F2A05661400279C6A /* Assets.xcassets */; };
+		00EAC8632A05661400279C6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EAC8622A05661400279C6A /* Preview Assets.xcassets */; };
+		00EAC86D2A05661400279C6A /* ColFruitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC86C2A05661400279C6A /* ColFruitsTests.swift */; };
+		00EAC8772A05661400279C6A /* ColFruitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8762A05661400279C6A /* ColFruitsUITests.swift */; };
+		00EAC8792A05661400279C6A /* ColFruitsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00EAC8692A05661400279C6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00EAC8502A05661200279C6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00EAC8572A05661200279C6A;
+			remoteInfo = ColFruits;
+		};
+		00EAC8732A05661400279C6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00EAC8502A05661200279C6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00EAC8572A05661200279C6A;
+			remoteInfo = ColFruits;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00EAC8582A05661200279C6A /* ColFruits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColFruits.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00EAC85B2A05661200279C6A /* ColFruitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsApp.swift; sourceTree = "<group>"; };
+		00EAC85D2A05661200279C6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00EAC85F2A05661400279C6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00EAC8622A05661400279C6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		00EAC8682A05661400279C6A /* ColFruitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColFruitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00EAC86C2A05661400279C6A /* ColFruitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsTests.swift; sourceTree = "<group>"; };
+		00EAC8722A05661400279C6A /* ColFruitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColFruitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00EAC8762A05661400279C6A /* ColFruitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITests.swift; sourceTree = "<group>"; };
+		00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00EAC8552A05661200279C6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00EAC8652A05661400279C6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00EAC86F2A05661400279C6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00EAC84F2A05661200279C6A = {
+			isa = PBXGroup;
+			children = (
+				00EAC85A2A05661200279C6A /* ColFruits */,
+				00EAC86B2A05661400279C6A /* ColFruitsTests */,
+				00EAC8752A05661400279C6A /* ColFruitsUITests */,
+				00EAC8592A05661200279C6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00EAC8592A05661200279C6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00EAC8582A05661200279C6A /* ColFruits.app */,
+				00EAC8682A05661400279C6A /* ColFruitsTests.xctest */,
+				00EAC8722A05661400279C6A /* ColFruitsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00EAC85A2A05661200279C6A /* ColFruits */ = {
+			isa = PBXGroup;
+			children = (
+				00EAC85B2A05661200279C6A /* ColFruitsApp.swift */,
+				00EAC85D2A05661200279C6A /* ContentView.swift */,
+				00EAC85F2A05661400279C6A /* Assets.xcassets */,
+				00EAC8612A05661400279C6A /* Preview Content */,
+			);
+			path = ColFruits;
+			sourceTree = "<group>";
+		};
+		00EAC8612A05661400279C6A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				00EAC8622A05661400279C6A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		00EAC86B2A05661400279C6A /* ColFruitsTests */ = {
+			isa = PBXGroup;
+			children = (
+				00EAC86C2A05661400279C6A /* ColFruitsTests.swift */,
+			);
+			path = ColFruitsTests;
+			sourceTree = "<group>";
+		};
+		00EAC8752A05661400279C6A /* ColFruitsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				00EAC8762A05661400279C6A /* ColFruitsUITests.swift */,
+				00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */,
+			);
+			path = ColFruitsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00EAC8572A05661200279C6A /* ColFruits */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00EAC87C2A05661400279C6A /* Build configuration list for PBXNativeTarget "ColFruits" */;
+			buildPhases = (
+				00EAC8542A05661200279C6A /* Sources */,
+				00EAC8552A05661200279C6A /* Frameworks */,
+				00EAC8562A05661200279C6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColFruits;
+			productName = ColFruits;
+			productReference = 00EAC8582A05661200279C6A /* ColFruits.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00EAC8672A05661400279C6A /* ColFruitsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00EAC87F2A05661400279C6A /* Build configuration list for PBXNativeTarget "ColFruitsTests" */;
+			buildPhases = (
+				00EAC8642A05661400279C6A /* Sources */,
+				00EAC8652A05661400279C6A /* Frameworks */,
+				00EAC8662A05661400279C6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00EAC86A2A05661400279C6A /* PBXTargetDependency */,
+			);
+			name = ColFruitsTests;
+			productName = ColFruitsTests;
+			productReference = 00EAC8682A05661400279C6A /* ColFruitsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		00EAC8712A05661400279C6A /* ColFruitsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00EAC8822A05661400279C6A /* Build configuration list for PBXNativeTarget "ColFruitsUITests" */;
+			buildPhases = (
+				00EAC86E2A05661400279C6A /* Sources */,
+				00EAC86F2A05661400279C6A /* Frameworks */,
+				00EAC8702A05661400279C6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00EAC8742A05661400279C6A /* PBXTargetDependency */,
+			);
+			name = ColFruitsUITests;
+			productName = ColFruitsUITests;
+			productReference = 00EAC8722A05661400279C6A /* ColFruitsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00EAC8502A05661200279C6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					00EAC8572A05661200279C6A = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					00EAC8672A05661400279C6A = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 00EAC8572A05661200279C6A;
+					};
+					00EAC8712A05661400279C6A = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 00EAC8572A05661200279C6A;
+					};
+				};
+			};
+			buildConfigurationList = 00EAC8532A05661200279C6A /* Build configuration list for PBXProject "ColFruits" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00EAC84F2A05661200279C6A;
+			productRefGroup = 00EAC8592A05661200279C6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00EAC8572A05661200279C6A /* ColFruits */,
+				00EAC8672A05661400279C6A /* ColFruitsTests */,
+				00EAC8712A05661400279C6A /* ColFruitsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00EAC8562A05661200279C6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00EAC8632A05661400279C6A /* Preview Assets.xcassets in Resources */,
+				00EAC8602A05661400279C6A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00EAC8662A05661400279C6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00EAC8702A05661400279C6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00EAC8542A05661200279C6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00EAC85E2A05661200279C6A /* ContentView.swift in Sources */,
+				00EAC85C2A05661200279C6A /* ColFruitsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00EAC8642A05661400279C6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00EAC86D2A05661400279C6A /* ColFruitsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00EAC86E2A05661400279C6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00EAC8792A05661400279C6A /* ColFruitsUITestsLaunchTests.swift in Sources */,
+				00EAC8772A05661400279C6A /* ColFruitsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00EAC86A2A05661400279C6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00EAC8572A05661200279C6A /* ColFruits */;
+			targetProxy = 00EAC8692A05661400279C6A /* PBXContainerItemProxy */;
+		};
+		00EAC8742A05661400279C6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00EAC8572A05661200279C6A /* ColFruits */;
+			targetProxy = 00EAC8732A05661400279C6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00EAC87A2A05661400279C6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00EAC87B2A05661400279C6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00EAC87D2A05661400279C6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ColFruits/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colfruits.ColFruits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00EAC87E2A05661400279C6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ColFruits/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colfruits.ColFruits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		00EAC8802A05661400279C6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colfruits.ColFruitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColFruits.app/ColFruits";
+			};
+			name = Debug;
+		};
+		00EAC8812A05661400279C6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colfruits.ColFruitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColFruits.app/ColFruits";
+			};
+			name = Release;
+		};
+		00EAC8832A05661400279C6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colfruits.ColFruitsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ColFruits;
+			};
+			name = Debug;
+		};
+		00EAC8842A05661400279C6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.colfruits.ColFruitsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ColFruits;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00EAC8532A05661200279C6A /* Build configuration list for PBXProject "ColFruits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00EAC87A2A05661400279C6A /* Debug */,
+				00EAC87B2A05661400279C6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00EAC87C2A05661400279C6A /* Build configuration list for PBXNativeTarget "ColFruits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00EAC87D2A05661400279C6A /* Debug */,
+				00EAC87E2A05661400279C6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00EAC87F2A05661400279C6A /* Build configuration list for PBXNativeTarget "ColFruitsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00EAC8802A05661400279C6A /* Debug */,
+				00EAC8812A05661400279C6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00EAC8822A05661400279C6A /* Build configuration list for PBXNativeTarget "ColFruitsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00EAC8832A05661400279C6A /* Debug */,
+				00EAC8842A05661400279C6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00EAC8502A05661200279C6A /* Project object */;
+}
