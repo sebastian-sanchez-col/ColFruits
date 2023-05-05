@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E63F7C2A05906600D26326 /* PrincipalCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E63F7B2A05906600D26326 /* PrincipalCarousel.swift */; };
+		00E63F7E2A05930700D26326 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E63F7D2A05930700D26326 /* WelcomeView.swift */; };
+		00E63F802A05932300D26326 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E63F7F2A05932300D26326 /* ExerciseView.swift */; };
 		00EAC85C2A05661200279C6A /* ColFruitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC85B2A05661200279C6A /* ColFruitsApp.swift */; };
 		00EAC85E2A05661200279C6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC85D2A05661200279C6A /* ContentView.swift */; };
 		00EAC8602A05661400279C6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EAC85F2A05661400279C6A /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00E63F7B2A05906600D26326 /* PrincipalCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalCarousel.swift; sourceTree = "<group>"; };
+		00E63F7D2A05930700D26326 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		00E63F7F2A05932300D26326 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		00EAC8582A05661200279C6A /* ColFruits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColFruits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EAC85B2A05661200279C6A /* ColFruitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsApp.swift; sourceTree = "<group>"; };
 		00EAC85D2A05661200279C6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +77,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E63F812A05933A00D26326 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				00EAC85D2A05661200279C6A /* ContentView.swift */,
+				00E63F7B2A05906600D26326 /* PrincipalCarousel.swift */,
+				00E63F7D2A05930700D26326 /* WelcomeView.swift */,
+				00E63F7F2A05932300D26326 /* ExerciseView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
 		00EAC84F2A05661200279C6A = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				00EAC85B2A05661200279C6A /* ColFruitsApp.swift */,
-				00EAC85D2A05661200279C6A /* ContentView.swift */,
+				00E63F812A05933A00D26326 /* VIews */,
 				00EAC85F2A05661400279C6A /* Assets.xcassets */,
 				00EAC8612A05661400279C6A /* Preview Content */,
 			);
@@ -258,7 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00EAC85E2A05661200279C6A /* ContentView.swift in Sources */,
+				00E63F7C2A05906600D26326 /* PrincipalCarousel.swift in Sources */,
 				00EAC85C2A05661200279C6A /* ColFruitsApp.swift in Sources */,
+				00E63F7E2A05930700D26326 /* WelcomeView.swift in Sources */,
+				00E63F802A05932300D26326 /* ExerciseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

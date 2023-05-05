@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            WelcomeView()
+            ForEach(0 ..< 2) { index in
+                ExerciseView(index: index)
+            }
+            Text("Third slide")
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 
