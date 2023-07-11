@@ -10,12 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            WelcomeView()
+            WelcomeView().padding()
+            HStack {
+                NumberCell(name: 1, isSelected: true)
+                NumberCell(name: 2, isSelected: false)
+            }.padding()
             ForEach(0 ..< 2) { index in
-                ExerciseView(index: index)
+                FruitView(index: index)
             }
             Text("Third slide")
-        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
     }
 }
 
