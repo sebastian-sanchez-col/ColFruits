@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class CarouselViewModel: ObservableObject {
+    @Published var images = ["carousel-fruit_1", "carousel-fruit_2", "carousel-fruit_3"]
+}
