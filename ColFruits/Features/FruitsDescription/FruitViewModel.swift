@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class FruitViewModel: ObservableObject {
+    @Published var videoNames: [String] = ["Intro", "Sightseeing"]
+    @Published var sectionNames: [String] = ["Introduction", "Countryside"]
+}
