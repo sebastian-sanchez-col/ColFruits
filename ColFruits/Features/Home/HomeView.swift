@@ -7,14 +7,24 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct HomeView: View {
     var body: some View {
-        Text("Welcome \nto colombian fruits")
+        TabView {
+            Text("Welcome \nto colombian fruits")
+            HStack {
+                NumberCell(name: 1, isSelected: true)
+                NumberCell(name: 2, isSelected: false)
+            }.padding()
+            ForEach(0 ..< 2) { index in
+                FruitView(index: index)
+            }
+            Text("Third slide")
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
     }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        HomeView()
     }
 }
