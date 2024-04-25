@@ -1,5 +1,9 @@
 #  Colombian fruits app
 
+Short gif showing beggining carousel:
+
+![](DemoGifs/Beggining-carousel.gif)
+
 Code structure:
 
         .

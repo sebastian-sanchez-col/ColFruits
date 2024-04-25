@@ -27,6 +27,7 @@
 		00EAC86D2A05661400279C6A /* ColFruitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC86C2A05661400279C6A /* ColFruitsTests.swift */; };
 		00EAC8772A05661400279C6A /* ColFruitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8762A05661400279C6A /* ColFruitsUITests.swift */; };
 		00EAC8792A05661400279C6A /* ColFruitsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */; };
+		9CA9D90E2BDACA56005EA1CE /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9CA9D90D2BDACA56005EA1CE /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000807242A5DBBF300396F3B /* Radme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Radme.md; sourceTree = "<group>"; };
 		000807262A5DBD4F00396F3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		000807282A5DBD6400396F3B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		000807302A5DC03100396F3B /* FruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +71,7 @@
 		00EAC8722A05661400279C6A /* ColFruitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColFruitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EAC8762A05661400279C6A /* ColFruitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITests.swift; sourceTree = "<group>"; };
 		00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9CA9D90D2BDACA56005EA1CE /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +192,7 @@
 		00EAC84F2A05661200279C6A = {
 			isa = PBXGroup;
 			children = (
-				000807242A5DBBF300396F3B /* Radme.md */,
+				9CA9D90D2BDACA56005EA1CE /* Readme.md */,
 				00EAC85A2A05661200279C6A /* ColFruits */,
 				00EAC86B2A05661400279C6A /* ColFruitsTests */,
 				00EAC8752A05661400279C6A /* ColFruitsUITests */,
@@ -354,6 +355,7 @@
 			files = (
 				00EAC8632A05661400279C6A /* Preview Assets.xcassets in Resources */,
 				00EAC8602A05661400279C6A /* Assets.xcassets in Resources */,
+				9CA9D90E2BDACA56005EA1CE /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ColFruits/Preview Content\"";
+				DEVELOPMENT_TEAM = CXX368N2R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -579,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ColFruits/Preview Content\"";
+				DEVELOPMENT_TEAM = CXX368N2R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
