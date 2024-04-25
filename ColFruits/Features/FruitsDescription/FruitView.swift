@@ -10,13 +10,12 @@ import SwiftUI
 
 struct FruitView: View {
     let index: Int
-    let videoNames: [String] = ["Intro", "Sightseeing"]
-    let sectionNames: [String] = ["Introduction", "Countryside"]
+    @ObservedObject var viewModel: FruitViewModel = FruitViewModel()
 
     var body: some View {
         VStack {
             VStack {
-                Text(sectionNames[index])
+                Text(viewModel.sectionNames[index])
                     .bold()
                     .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
             }
