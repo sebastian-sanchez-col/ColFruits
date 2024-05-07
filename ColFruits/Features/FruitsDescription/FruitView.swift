@@ -10,18 +10,18 @@ import SwiftUI
 
 struct FruitView: View {
     let index: Int
-    @ObservedObject var viewModel: FruitViewModel = FruitViewModel()
+    
+    @EnvironmentObject var store: AppStore
+    
 
     var body: some View {
         VStack {
             VStack {
-                Text(viewModel.sectionNames[index])
+                // TODO: - Add fruits stackview - 
+                Text("Fruit")
                     .bold()
                     .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
             }
-            Text("History")
-            Text("In Colombia, where can you find that?")
-            Text("Flavor")
         }
     }
 }

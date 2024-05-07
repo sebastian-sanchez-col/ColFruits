@@ -9,17 +9,19 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        TabView {
-            Text("Welcome \nto colombian fruits")
-            HStack {
-                NumberCell(name: 1, isSelected: true)
-                NumberCell(name: 2, isSelected: false)
-            }.padding()
-            ForEach(0 ..< 2) { index in
-                FruitView(index: index)
+        ScrollView {
+            VStack(alignment: .leading) {
+                ScreenTitleView(title: "Welcome \nto colombian fruits", size: 36, font: .largeTitle)
+                    .padding(.bottom, 17)
+                    .accessibilityIdentifier("TitleTextView")
+                ScreenTitleView(title: "Select one fruit", size: 24, font: .title2)
+                    .padding(.bottom, 4)
+                    .accessibilityIdentifier("SubTitleTextView")
+                ForEach(0 ..< 2) { index in
+                    FruitView(index: index)
+                }
             }
-            Text("Third slide")
-        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+        }
     }
 }
 
