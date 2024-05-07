@@ -9,18 +9,24 @@ import SwiftUI
 
 
 struct FruitView: View {
-    let index: Int
+    @StateObject var fruitList = FruitList()
     
     @EnvironmentObject var store: AppStore
     
-
     var body: some View {
         VStack {
-            VStack {
-                // TODO: - Add fruits stackview - 
-                Text("Fruit")
-                    .bold()
-                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+            Text("List of Fruits")
+                .font(.title)
+                .padding()
+            
+            ForEach(Array(fruitList.fruits.enumerated()), id: \.element.id) { index, fruit in
+                Text(fruit.name)
+                    .accessibilityIdentifier("Fruit-\(fruit.id)")
+
+            }
+            .accessibilityIdentifier("FruitViewHStackItems")
+            .onAppear {
+                fruitList.fetchFruitsFromFile()
             }
         }
     }
@@ -28,6 +34,6 @@ struct FruitView: View {
 
 struct FruitView_Previews: PreviewProvider {
     static var previews: some View {
-        FruitView(index: 0)
+        FruitView()
     }
 }
