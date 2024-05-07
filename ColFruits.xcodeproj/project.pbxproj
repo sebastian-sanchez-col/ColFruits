@@ -27,6 +27,8 @@
 		00EAC86D2A05661400279C6A /* ColFruitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC86C2A05661400279C6A /* ColFruitsTests.swift */; };
 		00EAC8772A05661400279C6A /* ColFruitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8762A05661400279C6A /* ColFruitsUITests.swift */; };
 		00EAC8792A05661400279C6A /* ColFruitsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */; };
+		9C0E1B9D2BEA960100E05C81 /* FruitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E1B9C2BEA960100E05C81 /* FruitList.swift */; };
+		9C0E1B9F2BEA967A00E05C81 /* Fruits.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E1B9E2BEA967A00E05C81 /* Fruits.json */; };
 		9CA9D90E2BDACA56005EA1CE /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9CA9D90D2BDACA56005EA1CE /* Readme.md */; };
 		9CC4CB152BEA590600B2C774 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB142BEA590600B2C774 /* AppState.swift */; };
 		9CC4CB182BEA5AFE00B2C774 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB172BEA5AFE00B2C774 /* AppActions.swift */; };
@@ -76,6 +78,8 @@
 		00EAC8722A05661400279C6A /* ColFruitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColFruitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EAC8762A05661400279C6A /* ColFruitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITests.swift; sourceTree = "<group>"; };
 		00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C0E1B9C2BEA960100E05C81 /* FruitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitList.swift; sourceTree = "<group>"; };
+		9C0E1B9E2BEA967A00E05C81 /* Fruits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fruits.json; sourceTree = "<group>"; };
 		9CA9D90D2BDACA56005EA1CE /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		9CC4CB142BEA590600B2C774 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9CC4CB172BEA5AFE00B2C774 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		000807252A5DBD3300396F3B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9C0E1B9B2BEA958C00E05C81 /* Data */,
 				9CC4CB162BEA5A8500B2C774 /* ViewModels */,
 				9CCA47C42BE83751004B606B /* Views */,
 				000807262A5DBD4F00396F3B /* Constants.swift */,
@@ -261,6 +266,15 @@
 			path = ColFruitsUITests;
 			sourceTree = "<group>";
 		};
+		9C0E1B9B2BEA958C00E05C81 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9C0E1B9C2BEA960100E05C81 /* FruitList.swift */,
+				9C0E1B9E2BEA967A00E05C81 /* Fruits.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9CC4CB132BEA58E000B2C774 /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +409,7 @@
 				00EAC8632A05661400279C6A /* Preview Assets.xcassets in Resources */,
 				00EAC8602A05661400279C6A /* Assets.xcassets in Resources */,
 				9CA9D90E2BDACA56005EA1CE /* Readme.md in Resources */,
+				9C0E1B9F2BEA967A00E05C81 /* Fruits.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +451,7 @@
 				000807372A5DC0AE00396F3B /* Fruit.swift in Sources */,
 				9CC4CB1C2BEA5BE300B2C774 /* Store.swift in Sources */,
 				9CCA47C32BE835A1004B606B /* ScreenTitleView.swift in Sources */,
+				9C0E1B9D2BEA960100E05C81 /* FruitList.swift in Sources */,
 				000807392A5DC0BE00396F3B /* Networking.swift in Sources */,
 				9CC4CB1A2BEA5B3800B2C774 /* AppReducer.swift in Sources */,
 				0008073B2A5DC0C900396F3B /* Storage.swift in Sources */,
