@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IntroView: View {
-
+    @EnvironmentObject var store: AppStore
     @ObservedObject var viewModel: IntroViewModel = IntroViewModel()
     @State var isPresentingSecondView = false
     @State private var currentPage: Int = 1
