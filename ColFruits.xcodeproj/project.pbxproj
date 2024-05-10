@@ -35,6 +35,7 @@
 		9CC4CB1A2BEA5B3800B2C774 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB192BEA5B3800B2C774 /* AppReducer.swift */; };
 		9CC4CB1C2BEA5BE300B2C774 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB1B2BEA5BE300B2C774 /* Store.swift */; };
 		9CCA47C32BE835A1004B606B /* ScreenTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA47C22BE835A1004B606B /* ScreenTitleView.swift */; };
+		9CE4E78B2BED476200A34C84 /* ErrorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4E78A2BED476200A34C84 /* ErrorsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		9CC4CB192BEA5B3800B2C774 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		9CC4CB1B2BEA5BE300B2C774 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9CCA47C22BE835A1004B606B /* ScreenTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleView.swift; sourceTree = "<group>"; };
+		9CE4E78A2BED476200A34C84 /* ErrorsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			children = (
 				9C0E1B9C2BEA960100E05C81 /* FruitList.swift */,
 				9C0E1B9E2BEA967A00E05C81 /* Fruits.json */,
+				9CE4E78A2BED476200A34C84 /* ErrorsEnum.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				00E63F7E2A05930700D26326 /* HomeView.swift in Sources */,
 				000807312A5DC03100396F3B /* FruitViewModel.swift in Sources */,
 				00E63F802A05932300D26326 /* FruitView.swift in Sources */,
+				9CE4E78B2BED476200A34C84 /* ErrorsEnum.swift in Sources */,
 				9CC4CB182BEA5AFE00B2C774 /* AppActions.swift in Sources */,
 				000807272A5DBD4F00396F3B /* Constants.swift in Sources */,
 				000B28752A60A7C000978024 /* IntroViewModel.swift in Sources */,
