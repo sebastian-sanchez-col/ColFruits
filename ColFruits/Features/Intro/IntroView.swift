@@ -10,7 +10,7 @@ import SwiftUI
 struct IntroView: View {
     @EnvironmentObject var store: AppStore
     @ObservedObject var viewModel: IntroViewModel = IntroViewModel()
-    @State var isPresentingSecondView = false
+    @State var isLastPage = false
     @State private var currentPage: Int = 1
 
     var body: some View {
@@ -30,7 +30,7 @@ struct IntroView: View {
                     if currentPage > 1 {
                         currentPage -= 1
                     } else {
-                        isPresentingSecondView = true
+                        isLastPage = true
                     }
                 }) {
                     if currentPage > 1 {
@@ -39,12 +39,12 @@ struct IntroView: View {
                         Text("Skip")
                     }
                 }
-                .fullScreenCover(isPresented: $isPresentingSecondView) {
+                .fullScreenCover(isPresented: $isLastPage) {
                     HomeView()
                 }
                 Button(action: {
                     if currentPage >= 3 {
-                        isPresentingSecondView = true
+                        isLastPage = true
                     } else {
                         currentPage += 1
                     }

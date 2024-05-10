@@ -20,7 +20,7 @@ struct HomeView: View {
                 ScreenTitleView(title: "Select one fruit", size: 24, font: .title2)
                     .padding(.bottom, 4)
                     .accessibilityIdentifier("SubTitleTextView")
-                FruitView()
+                FruitListView()
             }
         }
     }
