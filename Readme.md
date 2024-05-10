@@ -2,7 +2,7 @@
 
 Short gif showing beggining carousel:
 
-![](DemoGifs/Demo.mp4)
+![](DemoGifs/Demo.gif)
 
 Code structure:
 
