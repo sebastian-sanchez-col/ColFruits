@@ -21,10 +21,6 @@ struct HomeView: View {
                     .padding(.bottom, 4)
                     .accessibilityIdentifier("SubTitleTextView")
                 FruitView()
-                    .onAppear() {
-                        fruitList.fetchFruitsFromFile()
-                        
-                    }
             }
         }
     }

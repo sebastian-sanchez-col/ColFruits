@@ -19,14 +19,22 @@ struct FruitView: View {
                 .font(.title)
                 .padding()
             
-            ForEach(Array(fruitList.fruits.enumerated()), id: \.element.id) { index, fruit in
+            ForEach(Array(store.state.fruits.enumerated()), id: \.element.id) { index, fruit in
                 Text(fruit.name)
                     .accessibilityIdentifier("Fruit-\(fruit.id)")
 
             }
             .accessibilityIdentifier("FruitViewHStackItems")
-            .onAppear {
-                fruitList.fetchFruitsFromFile()
+            
+        }.onAppear {
+            fruitList.fetchFruitsFromFile { result in
+                switch result {
+                case .success(let fruits):
+                    store.dispatch(.setFruits(fruits))
+                case .failure(let error):
+                    // TODO: - @ataches, Create error view -
+                    break
+                }
             }
         }
     }
