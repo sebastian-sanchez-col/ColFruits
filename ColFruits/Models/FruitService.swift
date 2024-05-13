@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 class FruitList: ObservableObject {
-    func fetchFruitsFromFile(completion: @escaping ((Result<[Fruit], Error>) -> Void)) {
-        if let fileURL: URL = Bundle.main.url(forResource: "Fruits", withExtension: ".json") {
+    func fetchFruitsFromFile(fileName: String? = "Fruits", completion: @escaping ((Result<[Fruit], Error>) -> Void)) {
+        if let fileURL: URL = Bundle.main.url(forResource: fileName, withExtension: ".json") {
             do {
                 let jsonData = try Data(contentsOf: fileURL)
                 let decoder: JSONDecoder = JSONDecoder()

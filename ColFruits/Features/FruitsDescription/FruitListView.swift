@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FruitListView: View {
-    @StateObject var fruitList = FruitList()
-    
+    @State private var fruitList = FruitList()
     @EnvironmentObject var store: AppStore
     
     var body: some View {
