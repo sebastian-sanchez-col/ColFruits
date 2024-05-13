@@ -33,10 +33,6 @@ struct FruitCardView: View {
         }
     }
     
-    func isSelected() -> Bool{
-        return store.state.selectedFruit?.id == fruit.id
-    }
-    
     var body: some View {
         VStack(alignment: .leading) {
             AsyncImage(url: URL(string: self.imageURL)) { image in
@@ -55,15 +51,10 @@ struct FruitCardView: View {
         }
         .frame(width: frameWidth, height: frameHeight)
         .customFruitCardModifier(useFrame: shouldUseFrame)
-        .scaleEffect(isSelected() ? 1.03 : 1)
         .animation(.linear)
         .onTapGesture {
             // TODO: - @ataches: store selected fruit -
         }
-    }
-    
-    func getRandomFruitForComputer(idPlayerFruit: String, allFruits: [Fruit]) -> Fruit? {
-        return allFruits.filter { $0.id != idPlayerFruit }.randomElement()
     }
 }
 
@@ -85,33 +76,27 @@ struct CustomFruitCardModifier: ViewModifier {
     }
 }
 
-// TODO: - @ataches: relocate this view-
-extension View {
-    func customFruitCardModifier(useFrame: Bool) -> some View {
-        modifier(CustomFruitCardModifier(useFrame: useFrame))
-    }
-}
-
 #if !TESTING
 struct FruitCardView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let Fruits = [Fruit]
-
+        let fruitManager: FruitDataManager = .init()
+        
         let previewStore: AppStore = {
             let store = AppStore.preview
-            store.dispatch(.setFruits(Fruits))
-            
+            fruitManager.fetchFruitsFromFile(fileName: "MockFruits", completion: { result in
+                switch result {
+                case .success(let fruits):
+                    store.dispatch(.setFruits(fruits))
+                case .failure(_):
+                    break
+                }
+            })
             return store
         }()
-
-        ZStack{
-            Color("BackgroundColor").ignoresSafeArea()
-            // TODO: - @ataches: fix [], change it for getElementAt -
-            FruitCardView(fruit: Fruits[0])
-                .previewLayout(.sizeThatFits)
+        
+        return FruitCardView(fruit: previewStore.state.fruits.first ?? Fruit(id: "fruit-1", name: "test"))
                 .environmentObject(previewStore)
-        }
     }
 }
 #endif

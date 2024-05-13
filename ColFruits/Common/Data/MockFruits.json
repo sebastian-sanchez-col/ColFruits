@@ -2,5 +2,13 @@
     {
         "id": "fruit-1",
         "name": "Starfruit"
+    },
+    {
+        "id": "fruit-2",
+        "name": "Mango"
+    },
+    {
+        "id": "fruit-3",
+        "name": "Banana"
     }
 ]

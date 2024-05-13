@@ -27,8 +27,10 @@
 		00EAC8772A05661400279C6A /* ColFruitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8762A05661400279C6A /* ColFruitsUITests.swift */; };
 		00EAC8792A05661400279C6A /* ColFruitsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */; };
 		9C0BC7452BEEC530000F4C22 /* MockFruits.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BC7442BEEC530000F4C22 /* MockFruits.json */; };
-		9C0E1B9D2BEA960100E05C81 /* FruitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E1B9C2BEA960100E05C81 /* FruitService.swift */; };
+		9C0E1B9D2BEA960100E05C81 /* FruitDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0E1B9C2BEA960100E05C81 /* FruitDataManager.swift */; };
 		9C0E1B9F2BEA967A00E05C81 /* Fruits.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E1B9E2BEA967A00E05C81 /* Fruits.json */; };
+		9C6A39892BF2BB5D004A7961 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A39882BF2BB5D004A7961 /* Extension+View.swift */; };
+		9C6A398B2BF2C3E9004A7961 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A398A2BF2C3E9004A7961 /* APIEndpoints.swift */; };
 		9CA9D90E2BDACA56005EA1CE /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9CA9D90D2BDACA56005EA1CE /* Readme.md */; };
 		9CC4CB152BEA590600B2C774 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB142BEA590600B2C774 /* AppState.swift */; };
 		9CC4CB182BEA5AFE00B2C774 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB172BEA5AFE00B2C774 /* AppActions.swift */; };
@@ -80,8 +82,10 @@
 		00EAC8762A05661400279C6A /* ColFruitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITests.swift; sourceTree = "<group>"; };
 		00EAC8782A05661400279C6A /* ColFruitsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColFruitsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9C0BC7442BEEC530000F4C22 /* MockFruits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockFruits.json; sourceTree = "<group>"; };
-		9C0E1B9C2BEA960100E05C81 /* FruitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitService.swift; sourceTree = "<group>"; };
+		9C0E1B9C2BEA960100E05C81 /* FruitDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDataManager.swift; sourceTree = "<group>"; };
 		9C0E1B9E2BEA967A00E05C81 /* Fruits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fruits.json; sourceTree = "<group>"; };
+		9C6A39882BF2BB5D004A7961 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		9C6A398A2BF2C3E9004A7961 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		9CA9D90D2BDACA56005EA1CE /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		9CC4CB142BEA590600B2C774 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9CC4CB172BEA5AFE00B2C774 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6A39902BF2C62A004A7961 /* SDWebImageMapKit in Frameworks */,
+				9C6A398E2BF2C62A004A7961 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				9C0E1B9B2BEA958C00E05C81 /* Data */,
-				9CC4CB162BEA5A8500B2C774 /* ViewModels */,
+				9C6A39872BF2BB43004A7961 /* Extensions */,
 				9CCA47C42BE83751004B606B /* Views */,
 				000807262A5DBD4F00396F3B /* Constants.swift */,
 				000807282A5DBD6400396F3B /* AppStoreExtension.swift */,
@@ -166,16 +172,9 @@
 				9CE4E78C2BED691900A34C84 /* Entities */,
 				00E63F7F2A05932300D26326 /* FruitListView.swift */,
 				9CECC39B2BEEB987008B89CE /* FruitView.swift */,
+				9C0E1B9C2BEA960100E05C81 /* FruitDataManager.swift */,
 			);
 			path = FruitsDescription;
-			sourceTree = "<group>";
-		};
-		0027D2672A0AA5F3003E16E5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				9C0E1B9C2BEA960100E05C81 /* FruitService.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0027D2682A0AA606003E16E5 /* Utils */ = {
@@ -183,6 +182,7 @@
 			children = (
 				000807382A5DC0BE00396F3B /* Networking.swift */,
 				0008073A2A5DC0C900396F3B /* Storage.swift */,
+				9C6A398A2BF2C3E9004A7961 /* APIEndpoints.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -239,7 +239,6 @@
 				00EAC85B2A05661200279C6A /* ColFruitsApp.swift */,
 				000807252A5DBD3300396F3B /* Common */,
 				0008072A2A5DBDFA00396F3B /* Features */,
-				0027D2672A0AA5F3003E16E5 /* Models */,
 				0027D2682A0AA606003E16E5 /* Utils */,
 				0027D2692A0AA61A003E16E5 /* Resources */,
 				00EAC8612A05661400279C6A /* Preview Content */,
@@ -282,6 +281,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		9C6A39872BF2BB43004A7961 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C6A39882BF2BB5D004A7961 /* Extension+View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9CC4CB132BEA58E000B2C774 /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,13 +298,6 @@
 				9CC4CB1B2BEA5BE300B2C774 /* Store.swift */,
 			);
 			path = State;
-			sourceTree = "<group>";
-		};
-		9CC4CB162BEA5A8500B2C774 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		9CCA47C42BE83751004B606B /* Views */ = {
@@ -332,6 +332,10 @@
 			dependencies = (
 			);
 			name = ColFruits;
+			packageProductDependencies = (
+				9C6A398D2BF2C62A004A7961 /* SDWebImage */,
+				9C6A398F2BF2C62A004A7961 /* SDWebImageMapKit */,
+			);
 			productName = ColFruits;
 			productReference = 00EAC8582A05661200279C6A /* ColFruits.app */;
 			productType = "com.apple.product-type.application";
@@ -404,6 +408,9 @@
 				Base,
 			);
 			mainGroup = 00EAC84F2A05661200279C6A;
+			packageReferences = (
+				9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 00EAC8592A05661200279C6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -450,7 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				000807332A5DC05300396F3B /* HomeViewModel.swift in Sources */,
+				9C6A39892BF2BB5D004A7961 /* Extension+View.swift in Sources */,
 				000807292A5DBD6400396F3B /* AppStoreExtension.swift in Sources */,
+				9C6A398B2BF2C3E9004A7961 /* APIEndpoints.swift in Sources */,
 				005800F02A5F4818007C64A1 /* IntroView.swift in Sources */,
 				9CECC39C2BEEB987008B89CE /* FruitView.swift in Sources */,
 				00E63F7C2A05906600D26326 /* SlideView.swift in Sources */,
@@ -467,7 +476,7 @@
 				000B28752A60A7C000978024 /* IntroViewModel.swift in Sources */,
 				9CC4CB1C2BEA5BE300B2C774 /* Store.swift in Sources */,
 				9CCA47C32BE835A1004B606B /* ScreenTitleView.swift in Sources */,
-				9C0E1B9D2BEA960100E05C81 /* FruitService.swift in Sources */,
+				9C0E1B9D2BEA960100E05C81 /* FruitDataManager.swift in Sources */,
 				000807392A5DC0BE00396F3B /* Networking.swift in Sources */,
 				9CC4CB1A2BEA5B3800B2C774 /* AppReducer.swift in Sources */,
 				0008073B2A5DC0C900396F3B /* Storage.swift in Sources */,
@@ -791,6 +800,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C6A398D2BF2C62A004A7961 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		9C6A398F2BF2C62A004A7961 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00EAC8502A05661200279C6A /* Project object */;
 }
