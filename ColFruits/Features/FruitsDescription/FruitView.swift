@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FruitCardView: View {
     @EnvironmentObject var store: AppStore
-    private var fruit: Fruit
+    @State private var fruit: Fruit
     private var frameWidth: CGFloat?
     private var frameHeight: CGFloat?
     private var shouldUseFrame: Bool
@@ -61,10 +61,6 @@ struct FruitCardView: View {
             // TODO: - @ataches: store selected fruit -
         }
     }
-    
-    func getRandomFruitForComputer(idPlayerFruit: String, allFruits: [Fruit]) -> Fruit? {
-        return allFruits.filter { $0.id != idPlayerFruit }.randomElement()
-    }
 }
 
 struct CustomFruitCardModifier: ViewModifier {
@@ -85,30 +81,29 @@ struct CustomFruitCardModifier: ViewModifier {
     }
 }
 
-// TODO: - @ataches: relocate this view-
-extension View {
-    func customFruitCardModifier(useFrame: Bool) -> some View {
-        modifier(CustomFruitCardModifier(useFrame: useFrame))
-    }
-}
-
 #if !TESTING
 struct FruitCardView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let Fruits = [Fruit]
-
+        
         let previewStore: AppStore = {
             let store = AppStore.preview
-            store.dispatch(.setFruits(Fruits))
-            
             return store
         }()
+        
+        let fruits: FruitList = .init()
+        
+        fruits.fetchFruitsFromFile(fileName: "MockFruits", completion: { result in
+            switch result {
+            case .success(let fruits):
+                previewStore.dispatch(.setFruits(fruits))
+            case .failure(let error):
+                break
+            }
+        })
 
-        ZStack{
-            Color("BackgroundColor").ignoresSafeArea()
-            // TODO: - @ataches: fix [], change it for getElementAt -
-            FruitCardView(fruit: Fruits[0])
+        return ZStack{
+            FruitCardView(fruit: previewStore.state.fruits[0])
                 .previewLayout(.sizeThatFits)
                 .environmentObject(previewStore)
         }
