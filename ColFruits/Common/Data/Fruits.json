@@ -9,7 +9,8 @@
     },
     {
       "id": "fruit-3",
-      "name": "Starfruit"
+      "name": "Starfruit",
+      "imageURL": ""
     },
     {
       "id": "fruit-4",

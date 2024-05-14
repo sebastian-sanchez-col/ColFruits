@@ -8,25 +8,33 @@
 import SwiftUI
 
 struct FruitListView: View {
-    @StateObject var fruitList = FruitList()
-    
+    @ObservedObject var fruitList: FruitDataManager = .init()
     @EnvironmentObject var store: AppStore
+    private let numberOfColumns: Int = 2
     
     var body: some View {
-        VStack {
-            Text("List of Fruits")
+        VStack (alignment: .center, spacing: 10) {
+            Text("Fruits List")
                 .font(.title)
                 .padding()
-            
-            ForEach(Array(store.state.fruits.enumerated()), id: \.element.id) { index, fruit in
-                FruitCardView(fruit: fruit).accessibilityIdentifier("Fruit-\(fruit.id)")
+            ForEach(rowIndices(), id: \.self) { rowIndex in
+                HStack(spacing: 10) {
+                    ForEach(0..<numberOfColumns, id: \.self) { columnIndex in
+                        let index = rowIndex * numberOfColumns + columnIndex
+                        if index < store.state.fruits.count {
+                            FruitCardView(fruit: store.state.fruits[index])
+                                .accessibilityIdentifier("Fruit-\(store.state.fruits[index].id)")
+                        }
+                    }
+                }
             }
-            .accessibilityIdentifier("FruitViewHStackItems")
-            
-        }.onAppear {
+        }
+        .accessibilityIdentifier("FruitListVStackItems")
+        .onAppear {
             fruitList.fetchFruitsFromFile { result in
                 switch result {
                 case .success(let fruits):
+                    print(fruits.count)
                     store.dispatch(.setFruits(fruits))
                 case .failure(let error):
                     // TODO: - @ataches, Create error view -
@@ -35,10 +43,30 @@ struct FruitListView: View {
             }
         }
     }
+    
+    func rowIndices() -> Range<Int> {
+        return 0..<store.state.fruits.count / numberOfColumns + (store.state.fruits.count % numberOfColumns == 0 ? 0 : 1)
+    }
 }
 
 struct FruitView_Previews: PreviewProvider {
     static var previews: some View {
-        FruitListView()
+        let fruitManager: FruitDataManager = .init()
+        
+        let previewStore: AppStore = {
+            let store = AppStore.preview
+            fruitManager.fetchFruitsFromFile(fileName: "MockFruits", completion: { result in
+                switch result {
+                case .success(let fruits):
+                    print(fruits.count)
+                    store.dispatch(.setFruits(fruits))
+                case .failure(_):
+                    break
+                }
+            })
+            return store
+        }()
+        
+        return FruitListView().environmentObject(previewStore)
     }
 }

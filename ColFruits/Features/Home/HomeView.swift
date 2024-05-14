@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var store: AppStore
-    @StateObject var fruitList = FruitList()
     
     var body: some View {
         ScrollView {
@@ -28,6 +27,11 @@ struct HomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        let previewStore: AppStore = {
+            let store = AppStore.preview
+            return store
+        }()
+        
+        HomeView().environmentObject(previewStore)
     }
 }
