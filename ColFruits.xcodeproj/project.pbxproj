@@ -281,6 +281,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		9C6A39872BF2BB43004A7961 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C6A39882BF2BB5D004A7961 /* Extension+View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9CC4CB132BEA58E000B2C774 /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				000807332A5DC05300396F3B /* HomeViewModel.swift in Sources */,
+				9C6A39892BF2BB5D004A7961 /* Extension+View.swift in Sources */,
 				000807292A5DBD6400396F3B /* AppStoreExtension.swift in Sources */,
 				9C6A398B2BF2C3E9004A7961 /* APIEndpoints.swift in Sources */,
 				005800F02A5F4818007C64A1 /* IntroView.swift in Sources */,

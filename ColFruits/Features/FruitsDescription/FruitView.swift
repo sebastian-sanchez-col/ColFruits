@@ -56,10 +56,6 @@ struct FruitCardView: View {
             // TODO: - @ataches: store selected fruit -
         }
     }
-    
-    func getRandomFruitForComputer(idPlayerFruit: String, allFruits: [Fruit]) -> Fruit? {
-        return allFruits.filter { $0.id != idPlayerFruit }.randomElement()
-    }
 }
 
 struct CustomFruitCardModifier: ViewModifier {
@@ -77,13 +73,6 @@ struct CustomFruitCardModifier: ViewModifier {
         } else {
             content
         }
-    }
-}
-
-// TODO: - @ataches: relocate this view-
-extension View {
-    func customFruitCardModifier(useFrame: Bool) -> some View {
-        modifier(CustomFruitCardModifier(useFrame: useFrame))
     }
 }
 
