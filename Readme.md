@@ -1,10 +1,18 @@
 #  Colombian fruits app
 
-Short gif showing beggining carousel:
+## Short gif showing app functionalities
 
-![](DemoGifs/Demo.gif)
+Beggining carousel:
 
-Code structure:
+![](GifsDemo/DemoCarousel.gif)
+
+Dashboard home (Now, it's just showing loading indicators):
+
+![](GifsDemo/DemoDashboardHome.gif)
+
+## Code structure:
+
+Uses a modular architecture
 
         .
         ├── Assets.xcassets
