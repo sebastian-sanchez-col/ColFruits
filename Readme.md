@@ -1,6 +1,6 @@
 #  Colombian fruits app
 
-## Short gif showing app functionalities
+## Short gifs showing app functionalities
 
 Beggining carousel:
 
