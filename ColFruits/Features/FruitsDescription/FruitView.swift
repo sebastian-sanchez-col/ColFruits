@@ -18,8 +18,8 @@ struct FruitCardView: View {
     
     init(
         fruit: Fruit,
-        frameWidth: CGFloat? = 140,
-        frameHeight: CGFloat? = 128,
+        frameWidth: CGFloat? = 180,
+        frameHeight: CGFloat? = 170,
         shouldUseFrame: Bool = true,
         fontSize: CGFloat = 16
     ) {
@@ -45,12 +45,13 @@ struct FruitCardView: View {
             }
             .padding(.bottom, 7)
             
-            Text(self.fruit.name)
+            Text(fruit.name)
                 .font(.system(size: fontSize, weight: .regular))
+                .foregroundColor(.black)
                 .frame(alignment: .leading)
         }
         .frame(width: frameWidth, height: frameHeight)
-        .customFruitCardModifier(useFrame: shouldUseFrame)
+        .customFruitCardModifier(useFrame: shouldUseFrame, frameWidth: frameWidth ?? 150, frameHeight: frameHeight ?? 139)
         .animation(.linear)
         .onTapGesture {
             // TODO: - @ataches: store selected fruit -
@@ -60,11 +61,13 @@ struct FruitCardView: View {
 
 struct CustomFruitCardModifier: ViewModifier {
     var useFrame: Bool
+    var frameWidth: CGFloat
+    var frameHeight: CGFloat
     
     func body(content: Content) -> some View {
         if useFrame {
             content
-                .frame(width: 150, height: 139)
+                .frame(width: frameWidth, height: frameHeight)
                 .background(Color.white)
                 .cornerRadius(7)
                 .shadow(color: .black.opacity(0.25), radius: 7, x: -2, y: 3)

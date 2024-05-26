@@ -36,6 +36,7 @@
 		9CC4CB182BEA5AFE00B2C774 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB172BEA5AFE00B2C774 /* AppActions.swift */; };
 		9CC4CB1A2BEA5B3800B2C774 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB192BEA5B3800B2C774 /* AppReducer.swift */; };
 		9CC4CB1C2BEA5BE300B2C774 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB1B2BEA5BE300B2C774 /* Store.swift */; };
+		9CC58A7B2C03EB510036BF76 /* FruitsDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC58A7A2C03EB510036BF76 /* FruitsDashboard.swift */; };
 		9CCA47C32BE835A1004B606B /* ScreenTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA47C22BE835A1004B606B /* ScreenTitleView.swift */; };
 		9CE4E78B2BED476200A34C84 /* ErrorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE4E78A2BED476200A34C84 /* ErrorsEnum.swift */; };
 		9CECC39C2BEEB987008B89CE /* FruitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECC39B2BEEB987008B89CE /* FruitView.swift */; };
@@ -91,6 +92,7 @@
 		9CC4CB172BEA5AFE00B2C774 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		9CC4CB192BEA5B3800B2C774 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		9CC4CB1B2BEA5BE300B2C774 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9CC58A7A2C03EB510036BF76 /* FruitsDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsDashboard.swift; sourceTree = "<group>"; };
 		9CCA47C22BE835A1004B606B /* ScreenTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleView.swift; sourceTree = "<group>"; };
 		9CE4E78A2BED476200A34C84 /* ErrorsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsEnum.swift; sourceTree = "<group>"; };
 		9CECC39B2BEEB987008B89CE /* FruitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitView.swift; sourceTree = "<group>"; };
@@ -101,8 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C6A39902BF2C62A004A7961 /* SDWebImageMapKit in Frameworks */,
-				9C6A398E2BF2C62A004A7961 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +142,7 @@
 				005800EE2A5F4733007C64A1 /* Intro */,
 				0008072C2A5DBEAC00396F3B /* Slide */,
 				0008072B2A5DBE2B00396F3B /* Home */,
+				9CC58A792C03EB300036BF76 /* FruitsDashboard */,
 				0008072D2A5DBF2F00396F3B /* FruitsDescription */,
 			);
 			path = Features;
@@ -300,6 +301,14 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+		9CC58A792C03EB300036BF76 /* FruitsDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				9CC58A7A2C03EB510036BF76 /* FruitsDashboard.swift */,
+			);
+			path = FruitsDashboard;
+			sourceTree = "<group>";
+		};
 		9CCA47C42BE83751004B606B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,8 +342,6 @@
 			);
 			name = ColFruits;
 			packageProductDependencies = (
-				9C6A398D2BF2C62A004A7961 /* SDWebImage */,
-				9C6A398F2BF2C62A004A7961 /* SDWebImageMapKit */,
 			);
 			productName = ColFruits;
 			productReference = 00EAC8582A05661200279C6A /* ColFruits.app */;
@@ -409,7 +416,6 @@
 			);
 			mainGroup = 00EAC84F2A05661200279C6A;
 			packageReferences = (
-				9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 00EAC8592A05661200279C6A /* Products */;
 			projectDirPath = "";
@@ -459,6 +465,7 @@
 				000807332A5DC05300396F3B /* HomeViewModel.swift in Sources */,
 				9C6A39892BF2BB5D004A7961 /* Extension+View.swift in Sources */,
 				000807292A5DBD6400396F3B /* AppStoreExtension.swift in Sources */,
+				9CC58A7B2C03EB510036BF76 /* FruitsDashboard.swift in Sources */,
 				9C6A398B2BF2C3E9004A7961 /* APIEndpoints.swift in Sources */,
 				005800F02A5F4818007C64A1 /* IntroView.swift in Sources */,
 				9CECC39C2BEEB987008B89CE /* FruitView.swift in Sources */,
@@ -800,30 +807,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.19.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9C6A398D2BF2C62A004A7961 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		9C6A398F2BF2C62A004A7961 /* SDWebImageMapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C6A398C2BF2C62A004A7961 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImageMapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00EAC8502A05661200279C6A /* Project object */;
 }
