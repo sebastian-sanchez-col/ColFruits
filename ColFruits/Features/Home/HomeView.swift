@@ -11,17 +11,23 @@ struct HomeView: View {
     @EnvironmentObject var store: AppStore
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                ScreenTitleView(title: "Welcome \nto colombian fruits", size: 36, font: .largeTitle)
-                    .padding(.bottom, 17)
-                    .accessibilityIdentifier("TitleTextView")
-                ScreenTitleView(title: "Select one fruit", size: 24, font: .title2)
-                    .padding(.bottom, 4)
-                    .accessibilityIdentifier("SubTitleTextView")
-                FruitListView()
-            }
-        }
+        TabView {
+            FruitsDashboard()
+               .tabItem {
+                   Image(systemName: "1.circle")
+                   Text("Fruits")
+               }
+           Text("Curiosities")
+               .tabItem {
+                   Image(systemName: "2.circle")
+                   Text("Curiosities")
+               }
+           Text("Configuration")
+               .tabItem {
+                   Image(systemName: "3.circle")
+                   Text("Configuration")
+               }
+       }
     }
 }
 
