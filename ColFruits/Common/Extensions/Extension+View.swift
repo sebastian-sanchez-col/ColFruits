@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-    func customFruitCardModifier(useFrame: Bool) -> some View {
-        modifier(CustomFruitCardModifier(useFrame: useFrame))
+    func customFruitCardModifier(useFrame: Bool, frameWidth: CGFloat, frameHeight: CGFloat) -> some View {
+        modifier(CustomFruitCardModifier(useFrame: useFrame, frameWidth: frameWidth, frameHeight: frameHeight))
     }
 }
