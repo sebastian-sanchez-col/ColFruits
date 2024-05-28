@@ -26,10 +26,8 @@ struct ScreenTitleView: View {
     }
 }
 
-#if !TESTING
 struct ScreenTitleView_Previews: PreviewProvider {
     static var previews: some View {
         ScreenTitleView(title: "Fruits", size: 36, font: .title).previewLayout(.sizeThatFits)
     }
 }
-#endif
