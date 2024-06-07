@@ -10,6 +10,8 @@ import SwiftUI
 struct FruitListView: View {
     @ObservedObject var fruitList: FruitDataManager = .init()
     @EnvironmentObject var store: AppStore
+    @State private var isPresented: Bool = false
+    @State private var selectedFruitIndex: Int = -1
     private let numberOfColumns: Int = 2
     
     var body: some View {
@@ -18,14 +20,21 @@ struct FruitListView: View {
                 .font(.title)
                 .padding()
             ForEach(rowIndices(), id: \.self) { rowIndex in
-                HStack(spacing: 10) {
+                HStack {
                     ForEach(0..<numberOfColumns, id: \.self) { columnIndex in
                         let index = rowIndex * numberOfColumns + columnIndex
                         if index < store.state.fruits.count {
-                            FruitCardView(fruit: store.state.fruits[index])
+                            FruitCardView(fruit: .constant(store.state.fruits[index]), isPresented: $isPresented)
                                 .accessibilityIdentifier("Fruit-\(store.state.fruits[index].id)")
+                                
+                                .onTapGesture {
+                                    selectedFruitIndex = index
+                                    
+                                }
+                            
                         }
                     }
+                    FruitBottomSheet(isPresented: $isPresented, fruitIndex: $selectedFruitIndex)
                 }
             }
         }

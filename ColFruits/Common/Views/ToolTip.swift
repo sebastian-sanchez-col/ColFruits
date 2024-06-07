@@ -85,8 +85,8 @@ struct ToolTipBottomSheet_Previews: PreviewProvider {
                 bodyText: $bodyText,
                 buttonTitle: $buttonTitle
             )
-            .environment(\.topSafeArea, 44.0)
-            .environment(\.bottomSafeArea, 34.0)
+            .environment(\.topSafeAreaHeight, 44.0)
+            .environment(\.bottomSafeAreaHeight, 34.0)
             .environment(\.screenViewHeight, UIScreen.main.bounds.height)
         }
     }

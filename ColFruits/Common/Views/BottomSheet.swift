@@ -9,8 +9,8 @@ import SwiftUI
 
 public struct DynamicHeightBottomSheet<Content: View>: View {
     
-    @Environment(\.topSafeArea) var topSafeArea
-    @Environment(\.bottomSafeArea) var bottomSafeArea
+    @Environment(\.topSafeAreaHeight) var topSafeArea
+    @Environment(\.bottomSafeAreaHeight) var bottomSafeArea
     @Environment(\.screenViewHeight) var screenViewHeight
     
     @State var openHeight: CGFloat = 0
@@ -139,9 +139,6 @@ struct DynamicHeightBottomSheet_Previews: PreviewProvider {
                     Text("This is a sample content.")
                 }
             }
-            .environment(\.topSafeArea, 44.0)
-            .environment(\.bottomSafeArea, 34.0)
-            .environment(\.screenViewHeight, UIScreen.main.bounds.height)
         }
     }
 }
