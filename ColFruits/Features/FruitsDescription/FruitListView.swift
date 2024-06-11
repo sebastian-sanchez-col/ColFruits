@@ -11,30 +11,39 @@ struct FruitListView: View {
     @ObservedObject var fruitList: FruitDataManager = .init()
     @EnvironmentObject var store: AppStore
     @State private var isPresented: Bool = false
-    @State private var selectedFruitIndex: Int = -1
+    @State private var selectedFruitIndex: Int? = nil
     private let numberOfColumns: Int = 2
     
     var body: some View {
-        VStack (alignment: .center, spacing: 10) {
-            Text("Fruits List")
-                .font(.title)
-                .padding()
-            ForEach(rowIndices(), id: \.self) { rowIndex in
-                HStack {
-                    ForEach(0..<numberOfColumns, id: \.self) { columnIndex in
-                        let index = rowIndex * numberOfColumns + columnIndex
-                        if index < store.state.fruits.count {
-                            FruitCardView(fruit: .constant(store.state.fruits[index]), isPresented: $isPresented)
+        ZStack {
+            VStack (alignment: .center, spacing: 10) {
+                Text("Fruits List")
+                    .font(.title)
+                    .padding()
+                ForEach(rowIndices(), id: \.self) { rowIndex in
+                    HStack {
+                        ForEach(0..<numberOfColumns, id: \.self) { columnIndex in
+                            let index = rowIndex * numberOfColumns + columnIndex
+                            if index < store.state.fruits.count {
+                                FruitCardView(
+                                    index: .constant(index),
+                                    isPresented: $isPresented,
+                                    selectedFruitIndex: $selectedFruitIndex
+                                )
                                 .accessibilityIdentifier("Fruit-\(store.state.fruits[index].id)")
-                                
-                                .onTapGesture {
-                                    selectedFruitIndex = index
-                                    
-                                }
-                            
+                            }
                         }
                     }
-                    FruitBottomSheet(isPresented: $isPresented, fruitIndex: $selectedFruitIndex)
+                } 
+            }
+            if isPresented {
+                if let selectedFruitIndex  {
+                    ToolTipBottomSheet(
+                        isPresented: $isPresented,
+                        header: .constant(store.state.fruits[selectedFruitIndex].name),
+                        bodyText: .constant(store.state.fruits[selectedFruitIndex].name),
+                        buttonTitle: .constant(store.state.fruits[selectedFruitIndex].name)
+                    )
                 }
             }
         }

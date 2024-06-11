@@ -30,6 +30,7 @@ struct FruitBottomSheet: View {
 
 struct FruitBottomSheet_Previews: PreviewProvider {
     static var previews: some View {
+        @State var isPresented: Bool = true
         
         let fruitManager: FruitDataManager = .init()
         
@@ -47,7 +48,7 @@ struct FruitBottomSheet_Previews: PreviewProvider {
         }()
         
         return FruitBottomSheet(
-                isPresented: .constant(true),
+                isPresented: $isPresented,
                 fruitIndex: .constant(0)
         ).environmentObject(previewStore)
     }

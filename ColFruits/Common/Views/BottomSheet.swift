@@ -15,7 +15,7 @@ public struct DynamicHeightBottomSheet<Content: View>: View {
     
     @State var openHeight: CGFloat = 0
     @State private var bottomSheetSize: CGSize = .zero
-    
+    @State private var bottomSheetHeight: CGFloat = 0
     @GestureState private var translation: CGFloat = 0
     @Binding var isPresented: Bool
     
@@ -43,8 +43,7 @@ public struct DynamicHeightBottomSheet<Content: View>: View {
         openAction: (() -> Void)? = nil
     ) {
         self._isPresented = isPresented
-        let content = content()
-        self.content = content
+        self.content = content()
         self.openAction = openAction
         self.headingForLargeContent = headingForLargeContent
     }
@@ -53,49 +52,71 @@ public struct DynamicHeightBottomSheet<Content: View>: View {
         ZStack {
             if isPresented {
                 backgroundTransparentView
+                    .onTapGesture {
+                        self.isPresented = false
+                    }
             }
             VStack(spacing: 0) {
                 if !contentHeightExceedsScreen {
                     content
-                        .background(Color.white) 
-                        .cornerRadius(16)
+                        .background(Color.white)
+                        .cornerRadius(8)
                         .shadow(radius: 10)
-                        .padding(.horizontal)
-                        .opacity(isPresented ? 1 : 0)
+                        .padding(.all, 10)
+                        .background(
+                            GeometryReader { geometry in
+                                Color.clear.preference(
+                                    key: SizePreferenceKey.self,
+                                    value: geometry.size
+                                )
+                            }
+                        )
+                        .onPreferenceChange(SizePreferenceKey.self) { preferences in
+                            self.bottomSheetSize = CGSize(width: preferences.width, height: preferences.height)
+                        }
                 } else {
-                    HStack(alignment: .center) {
-                        Spacer()
-                        Text(headingForLargeContent)
-                            .font(.title2)
-                        Spacer()
-                        Image(systemName: "1.circle")
+                    VStack(spacing: 0) {
+                        HStack {
+                            Spacer()
+                            Text(headingForLargeContent)
+                                .font(.title2)
+                            Spacer()
+                            Image(systemName: "1.circle")
+                        }
+                        .padding(20)
+                        Divider()
+                        ScrollView {
+                            content
+                                .background(Color.white)
+                                .cornerRadius(8)
+                                .shadow(radius: 10)
+                                .padding(.all, 10)
+                                .background(
+                                    GeometryReader { geometry in
+                                        Color.clear.preference(
+                                            key: SizePreferenceKey.self,
+                                            value: geometry.size
+                                        )
+                                    }
+                                )
+                                .onPreferenceChange(SizePreferenceKey.self) { preferences in
+                                    self.bottomSheetSize = CGSize(width: preferences.width, height: preferences.height)
+                                }
+                        }
                     }
-                    .padding(20)
-                    Divider()
-                    ScrollView {
-                        content
-                            .background(Color.white)
-                            .cornerRadius(16)
-                            .shadow(radius: 10)
-                            .padding(.horizontal)
-                            .opacity(isPresented ? 1 : 0)
-                    }
-                }
-            }
-            .onReceive([$bottomSheetSize].publisher.first()) { size in
-                if isPresented {
-                    openHeight = bottomSheetSize.height
+                    
                 }
             }
             .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - topSafeArea, alignment: .top)
             .offset(y: max(yOffset + self.translation, 0))
+            .animation(.linear(duration: 0.25))
             .onAppear {
                 openAction?()
+                if isPresented {
+                    openHeight = bottomSheetSize.height
+                }
             }
-        }
-        .animation(.linear(duration: 0.25))
-        .onTapGesture {
-            self.isPresented.toggle()
+            .padding(.bottom, 15)
         }
         .gesture(dragGesture)
     }
@@ -117,6 +138,14 @@ public struct DynamicHeightBottomSheet<Content: View>: View {
                 self.isPresented = false
             }
         }
+    }
+}
+
+struct SizePreferenceKey: PreferenceKey {
+    static var defaultValue: CGSize = .zero
+    
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        _ = nextValue()
     }
 }
 

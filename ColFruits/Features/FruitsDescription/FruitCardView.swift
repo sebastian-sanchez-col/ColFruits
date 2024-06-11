@@ -1,5 +1,5 @@
 //
-//  FruitView.swift
+//  FruitCardView.swift
 //  ColFruits
 //
 //  Created by Juan Sebastian Sanchez Mancilla on 5/05/23.
@@ -9,23 +9,29 @@ import SwiftUI
 
 struct FruitCardView: View {
     @EnvironmentObject var store: AppStore
-    @Binding var fruit: Fruit
+    @Binding var index: Int
     @Binding var isPresented: Bool
+    @Binding var selectedFruitIndex: Int?
     private var frameWidth: CGFloat?
     private var frameHeight: CGFloat?
     private var shouldUseFrame: Bool
     private var fontSize: CGFloat
+    private var fruit: Fruit {
+        return store.state.fruits[$index.wrappedValue]
+    }
     
     init(
-        fruit: Binding<Fruit>,
+        index: Binding<Int>,
         isPresented: Binding<Bool>,
+        selectedFruitIndex: Binding<Int?>,
         frameWidth: CGFloat? = 180,
         frameHeight: CGFloat? = 170,
         shouldUseFrame: Bool = true,
         fontSize: CGFloat = 16
     ) {
-        self._fruit = fruit
+        self._index = index
         self._isPresented = isPresented
+        self._selectedFruitIndex = selectedFruitIndex
         self.frameWidth = frameWidth
         self.frameHeight = frameHeight
         self.shouldUseFrame = shouldUseFrame
@@ -34,7 +40,7 @@ struct FruitCardView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: $fruit.imageURL.wrappedValue ?? "")) { image in
+            AsyncImage(url: URL(string: fruit.imageURL ?? "")) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -46,6 +52,7 @@ struct FruitCardView: View {
                         
             Button(fruit.name) {
                 self.isPresented = true
+                self.selectedFruitIndex = index
             }
             .font(.system(size: fontSize, weight: .regular))
             .foregroundColor(.black)
@@ -98,9 +105,7 @@ struct FruitCardView_Previews: PreviewProvider {
             return store
         }()
         
-        let fruit: Fruit = previewStore.state.fruits.first ?? Fruit(id: "fruit-1", name: "test")
-        
-        return FruitCardView(fruit: .constant(fruit), isPresented: .constant(false))
+        return FruitCardView(index: .constant(0), isPresented: .constant(false), selectedFruitIndex: .constant(0))
                 .environmentObject(previewStore)
     }
 }
