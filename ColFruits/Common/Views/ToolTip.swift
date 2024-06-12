@@ -58,11 +58,17 @@ public struct ToolTipBottomSheet: View {
             .padding([.leading, .top, .trailing], 30)
             .padding(.bottom, 15)
             .background(Color.white)
-            .cornerRadius(16)
             .shadow(radius: 10)
         } openAction: {
             openAction?()
         }
+        .accessibilityAddTraits(.isModal)
+        .onChange(of: isPresented) { newValue in
+            if newValue {
+                focusedVoiceoverArea.send(.header)
+            }
+        }
+        .padding(.bottom, 30)
     }
 }
 
@@ -85,9 +91,6 @@ struct ToolTipBottomSheet_Previews: PreviewProvider {
                 bodyText: $bodyText,
                 buttonTitle: $buttonTitle
             )
-            .environment(\.topSafeArea, 44.0)
-            .environment(\.bottomSafeArea, 34.0)
-            .environment(\.screenViewHeight, UIScreen.main.bounds.height)
         }
     }
 }

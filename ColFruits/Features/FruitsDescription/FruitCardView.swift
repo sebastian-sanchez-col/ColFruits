@@ -1,5 +1,5 @@
 //
-//  FruitView.swift
+//  FruitCardView.swift
 //  ColFruits
 //
 //  Created by Juan Sebastian Sanchez Mancilla on 5/05/23.
@@ -9,33 +9,38 @@ import SwiftUI
 
 struct FruitCardView: View {
     @EnvironmentObject var store: AppStore
-    private var fruit: Fruit
+    @Binding var index: Int
+    @Binding var isPresented: Bool
+    @Binding var selectedFruitIndex: Int?
     private var frameWidth: CGFloat?
     private var frameHeight: CGFloat?
     private var shouldUseFrame: Bool
     private var fontSize: CGFloat
-    private var imageURL: String = ""
+    private var fruit: Fruit {
+        return store.state.fruits[$index.wrappedValue]
+    }
     
     init(
-        fruit: Fruit,
+        index: Binding<Int>,
+        isPresented: Binding<Bool>,
+        selectedFruitIndex: Binding<Int?>,
         frameWidth: CGFloat? = 180,
         frameHeight: CGFloat? = 170,
         shouldUseFrame: Bool = true,
         fontSize: CGFloat = 16
     ) {
-        self.fruit = fruit
+        self._index = index
+        self._isPresented = isPresented
+        self._selectedFruitIndex = selectedFruitIndex
         self.frameWidth = frameWidth
         self.frameHeight = frameHeight
         self.shouldUseFrame = shouldUseFrame
         self.fontSize = fontSize
-        if let imageURL: String = fruit.imageURL {
-            self.imageURL = imageURL
-        }
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: self.imageURL)) { image in
+            AsyncImage(url: URL(string: fruit.imageURL ?? "")) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -44,11 +49,15 @@ struct FruitCardView: View {
                 ProgressView()
             }
             .padding(.bottom, 7)
-            
-            Text(fruit.name)
-                .font(.system(size: fontSize, weight: .regular))
-                .foregroundColor(.black)
-                .frame(alignment: .leading)
+                        
+            Button(fruit.name) {
+                self.isPresented = true
+                self.selectedFruitIndex = index
+            }
+            .font(.system(size: fontSize, weight: .regular))
+            .foregroundColor(.black)
+            .frame(alignment: .leading)
+            .padding(30)
         }
         .frame(width: frameWidth, height: frameHeight)
         .customFruitCardModifier(useFrame: shouldUseFrame, frameWidth: frameWidth ?? 150, frameHeight: frameHeight ?? 139)
@@ -79,9 +88,7 @@ struct CustomFruitCardModifier: ViewModifier {
     }
 }
 
-#if !TESTING
 struct FruitCardView_Previews: PreviewProvider {
-
     static var previews: some View {
         let fruitManager: FruitDataManager = .init()
         
@@ -98,8 +105,7 @@ struct FruitCardView_Previews: PreviewProvider {
             return store
         }()
         
-        return FruitCardView(fruit: previewStore.state.fruits.first ?? Fruit(id: "fruit-1", name: "test"))
+        return FruitCardView(index: .constant(0), isPresented: .constant(false), selectedFruitIndex: .constant(0))
                 .environmentObject(previewStore)
     }
 }
-#endif
