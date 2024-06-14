@@ -16,7 +16,7 @@ struct FruitCardView: View {
     private var frameHeight: CGFloat?
     private var shouldUseFrame: Bool
     private var fontSize: CGFloat
-    private var fruit: Fruit {
+    private var fruit: FruitModel {
         return store.state.fruits[$index.wrappedValue]
     }
     

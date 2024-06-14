@@ -38,12 +38,7 @@ struct FruitListView: View {
             }
             if isPresented {
                 if let selectedFruitIndex  {
-                    ToolTipBottomSheet(
-                        isPresented: $isPresented,
-                        header: .constant(store.state.fruits[selectedFruitIndex].name),
-                        bodyText: .constant(store.state.fruits[selectedFruitIndex].name),
-                        buttonTitle: .constant(store.state.fruits[selectedFruitIndex].name)
-                    )
+                    FruitBottomSheet(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
                 }
             }
         }
