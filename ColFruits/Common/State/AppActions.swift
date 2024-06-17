@@ -8,6 +8,6 @@
 import Foundation
 
 enum AppActions {
-    case setFruits([Fruit])
-    case setSelected(Fruit?)
+    case setFruits([FruitModel])
+    case setSelected(FruitModel?)
 }

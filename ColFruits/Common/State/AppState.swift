@@ -8,6 +8,6 @@
 import Foundation
 
 struct AppState {
-    var fruits: [Fruit] = []
-    var selectedFruit: Fruit?
+    var fruits: [FruitModel] = []
+    var selectedFruit: FruitModel?
 }

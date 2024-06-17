@@ -24,6 +24,7 @@ public struct ToolTipBottomSheet: View {
     
     public init (
         isPresented: Binding<Bool>,
+        imageURL: Binding<String?>,
         header: Binding<String>,
         bodyText: Binding<String>,
         buttonTitle: Binding<String>,
@@ -87,6 +88,7 @@ struct ToolTipBottomSheet_Previews: PreviewProvider {
         var body: some View {
             ToolTipBottomSheet(
                 isPresented: $isPresented,
+                imageURL: .constant(nil),
                 header: $header,
                 bodyText: $bodyText,
                 buttonTitle: $buttonTitle

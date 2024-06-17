@@ -1,24 +1,54 @@
 [
     {
       "id": "fruit-1",
-      "name": "Pomegranate"
+      "name": "Dragon Fruit (Pitaya)",
+      "description": "Known for its striking appearance and mildly sweet taste, pitaya is a popular choice for smoothies and desserts."
     },
     {
       "id": "fruit-2",
-      "name": "Banana"
+      "name": "Naranjilla (Lulo)",
+      "description": "This fruit has a tangy, citrus-like flavor and is often used to make refreshing beverages. Its unique taste makes it a favorite in Colombian cuisine."
     },
     {
       "id": "fruit-3",
-      "name": "Starfruit",
-      "imageURL": ""
+      "name": "Pineapple Guava (Feijoa)",
+      "imageURL": "",
+      "description": "With a flavor that combines pineapple and guava, feijoa is enjoyed fresh or in jams and desserts."
     },
     {
       "id": "fruit-4",
-      "name": "Watermelon"
+      "name": "Peach Palm Fruit (Chontaduro)",
+      "description": "This nutritious fruit is commonly eaten boiled and salted or mixed with honey. It has a starchy texture and a slightly sweet taste. Additionally, chontaduro is believed to have aphrodisiac properties."
     },
     {
       "id": "fruit-5",
-      "name": "Mango"
-    }
+      "name": "Passion Fruit (Maracuyá)",
+      "description": "Known for its aromatic, tangy pulp, passion fruit is used in juices, desserts, and sauces. Its refreshing taste makes it a favorite in tropical drinks."
+    },
+    {
+      "id": "fruit-6",
+      "name": "Soursop (Guanábana)",
+      "description": "With a sweet and tart flavor, soursop is often used in beverages, ice creams, and smoothies. It's also known for its potential health benefits."
+    },
+    {
+      "id": "fruit-7",
+      "name": "Tree Tomato (Tomate de Árbol)",
+      "description": "This fruit has a sweet and sour taste, making it ideal for juices, sauces, and salads."
+    },
+    {
+      "id": "fruit-8",
+      "name": "Spanish Lime (Mamoncillo)",
+      "description": "Similar to lychee, mamoncillo has a tangy-sweet flavor and is enjoyed fresh, often eaten directly from the peel."
+    },
+    {
+      "id": "fruit-9",
+      "name": "Borojó",
+      "description": "Known for its high energy content and unique taste, borojó is often used in health drinks and is believed to have aphrodisiac properties."
+    },
+    {
+      "id": "fruit-10",
+      "name": "Banana Passion Fruit (Curuba)",
+      "description": "This fruit has a banana-like texture and a sweet yet tangy flavor, making it perfect for desserts and beverages."
+    },
 ]
 

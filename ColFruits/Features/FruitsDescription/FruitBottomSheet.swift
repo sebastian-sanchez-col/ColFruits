@@ -10,18 +10,22 @@ import SwiftUI
 struct FruitBottomSheet: View {
     @EnvironmentObject var store: AppStore
     @Binding var isPresented: Bool
-    @Binding var fruitIndex: Int
+    @Binding var selectedFruitIndex: Int?
     
     var body: some View {
         VStack {
             if isPresented {
-                if let fruitIndex: Int = store.state.fruits.indices.first(where: { $0 == fruitIndex }) {
-                    ToolTipBottomSheet(
-                        isPresented: $isPresented,
-                        header: .constant(store.state.fruits[fruitIndex].name),
-                        bodyText: .constant(store.state.fruits[fruitIndex].name),
-                        buttonTitle: .constant(store.state.fruits[fruitIndex].name)
-                    )
+                if !store.state.fruits.isEmpty {
+                    if let selectedFruitIndex: Int = $selectedFruitIndex.wrappedValue {
+                        let fruit: FruitModel = store.state.fruits[selectedFruitIndex]
+                        ToolTipBottomSheet(
+                            isPresented: $isPresented,
+                            imageURL: .constant(fruit.imageURL),
+                            header: .constant(fruit.name),
+                            bodyText: .constant(fruit.description),
+                            buttonTitle: .constant("Close")
+                        )
+                    }
                 }
             }
         }
@@ -31,25 +35,20 @@ struct FruitBottomSheet: View {
 struct FruitBottomSheet_Previews: PreviewProvider {
     static var previews: some View {
         @State var isPresented: Bool = true
+        @State var selectedFruitIndex: Int? = 1
         
-        let fruitManager: FruitDataManager = .init()
+        let mockFruits: [FruitModel] = [
+            FruitModel(id: "1", name: "Apple", description: "A juicy fruit."),
+            FruitModel(id: "2", name: "Banana", description: "A yellow fruit.")
+        ]
         
         let previewStore: AppStore = {
             let store = AppStore.preview
-            fruitManager.fetchFruitsFromFile(fileName: "MockFruits", completion: { result in
-                switch result {
-                case .success(let fruits):
-                    store.dispatch(.setFruits(fruits))
-                case .failure(_):
-                    break
-                }
-            })
+            store.dispatch(.setFruits(mockFruits))
             return store
         }()
         
-        return FruitBottomSheet(
-                isPresented: $isPresented,
-                fruitIndex: .constant(0)
-        ).environmentObject(previewStore)
+        return FruitBottomSheet(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
+            .environmentObject(previewStore)
     }
 }
