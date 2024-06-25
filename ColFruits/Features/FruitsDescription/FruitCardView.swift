@@ -12,20 +12,18 @@ struct FruitCardView: View {
     @Binding var index: Int
     @Binding var isPresented: Bool
     @Binding var selectedFruitIndex: Int?
-    private var frameWidth: CGFloat?
-    private var frameHeight: CGFloat?
+    private var frameWidth: CGFloat
+    private var frameHeight: CGFloat
     private var shouldUseFrame: Bool
     private var fontSize: CGFloat
-    private var fruit: FruitModel {
-        return store.state.fruits[$index.wrappedValue]
-    }
+    @State var fruit: FruitModel?
     
     init(
         index: Binding<Int>,
         isPresented: Binding<Bool>,
         selectedFruitIndex: Binding<Int?>,
-        frameWidth: CGFloat? = 180,
-        frameHeight: CGFloat? = 170,
+        frameWidth: CGFloat = 180,
+        frameHeight: CGFloat = 170,
         shouldUseFrame: Bool = true,
         fontSize: CGFloat = 16
     ) {
@@ -39,32 +37,40 @@ struct FruitCardView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: fruit.imageURL ?? "")) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(7)
-            } placeholder: {
-                ProgressView()
+        VStack(alignment: .center) {
+            if let fruit {
+                if let imageURL: String = fruit.imageAddress,
+                   let url: URL = URL(string: imageURL) {
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(7)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .padding(7)
+                }
+                Button(fruit.name) {
+                    self.isPresented = true
+                    self.selectedFruitIndex = index
+                }
+                .font(.system(size: fontSize, weight: .regular))
+                .foregroundColor(.black)
+                .frame(alignment: .leading)
+                .padding(5)
             }
-            .padding(.bottom, 7)
-                        
-            Button(fruit.name) {
-                self.isPresented = true
-                self.selectedFruitIndex = index
-            }
-            .font(.system(size: fontSize, weight: .regular))
-            .foregroundColor(.black)
-            .frame(alignment: .leading)
-            .padding(30)
         }
         .frame(width: frameWidth, height: frameHeight)
-        .customFruitCardModifier(useFrame: shouldUseFrame, frameWidth: frameWidth ?? 150, frameHeight: frameHeight ?? 139)
+        .customFruitCardModifier(useFrame: shouldUseFrame, frameWidth: frameWidth, frameHeight: frameHeight)
         .animation(.linear)
-        .onTapGesture {
-            // TODO: - @ataches: store selected fruit -
+        .onAppear() {
+            loadFruit()
         }
+    }
+    
+    func loadFruit() {
+        fruit = store.state.fruits[index]
     }
 }
 
@@ -90,22 +96,11 @@ struct CustomFruitCardModifier: ViewModifier {
 
 struct FruitCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let fruitManager: FruitDataManager = .init()
-        
-        let previewStore: AppStore = {
-            let store = AppStore.preview
-            fruitManager.fetchFruitsFromFile(fileName: "MockFruits", completion: { result in
-                switch result {
-                case .success(let fruits):
-                    store.dispatch(.setFruits(fruits))
-                case .failure(_):
-                    break
-                }
-            })
-            return store
-        }()
-        
-        return FruitCardView(index: .constant(0), isPresented: .constant(false), selectedFruitIndex: .constant(0))
-                .environmentObject(previewStore)
+        @State var isPresented: Bool = false
+        @State var selectedFruitIndex: Int? = 1
+        @State var index: Int = 0
+                
+        return FruitCardView(index: $index, isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
+                .environmentObject(AppStore.preview)
     }
 }

@@ -11,6 +11,7 @@ import Combine
 public struct ToolTipBottomSheet: View {
     @Binding var isPresented: Bool
     @Binding var header: String
+    @Binding var imageURL: URL?
     @Binding var bodyText: String
     @Binding var buttonTitle: String
     
@@ -24,13 +25,14 @@ public struct ToolTipBottomSheet: View {
     
     public init (
         isPresented: Binding<Bool>,
-        imageURL: Binding<String?>,
+        imageURL: Binding<URL?>,
         header: Binding<String>,
         bodyText: Binding<String>,
         buttonTitle: Binding<String>,
         openAction: (() -> Void)? = nil
     ) {
         _isPresented = isPresented
+        _imageURL = imageURL
         _header = header
         _bodyText = bodyText
         _buttonTitle = buttonTitle
@@ -40,6 +42,17 @@ public struct ToolTipBottomSheet: View {
     public var body: some View {
         DynamicHeightBottomSheet(isPresented: $isPresented) {
             VStack(alignment: .leading) {
+                if let url: URL = imageURL {
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(7)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 350, height: 350)
+                }
                 Text(header)
                     .font(.title2)
                     .accessibilityElement()
@@ -55,8 +68,10 @@ public struct ToolTipBottomSheet: View {
                 Button(buttonTitle) {
                     isPresented = false
                 }
+                Spacer()
+                    .frame(height: 30)
             }
-            .padding([.leading, .top, .trailing], 30)
+            .padding([.leading, .trailing], 30)
             .padding(.bottom, 15)
             .background(Color.white)
             .shadow(radius: 10)
