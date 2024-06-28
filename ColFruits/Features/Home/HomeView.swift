@@ -33,11 +33,6 @@ struct HomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let previewStore: AppStore = {
-            let store = AppStore.preview
-            return store
-        }()
-        
-        HomeView().environmentObject(previewStore)
+        HomeView().environmentObject(AppStore.preview)
     }
 }

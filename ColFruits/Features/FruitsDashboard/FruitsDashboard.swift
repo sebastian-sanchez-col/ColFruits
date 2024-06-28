@@ -27,11 +27,6 @@ struct FruitsDashboard: View {
 
 struct FruitsDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        let previewStore: AppStore = {
-            let store = AppStore.preview
-            return store
-        }()
-        
-        HomeView().environmentObject(previewStore)
+        HomeView().environmentObject(AppStore.preview)
     }
 }

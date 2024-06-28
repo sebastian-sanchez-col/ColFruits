@@ -37,9 +37,7 @@ struct FruitListView: View {
                 } 
             }
             if isPresented {
-                if let selectedFruitIndex  {
-                    FruitBottomSheet(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
-                }
+                FruitBottomSheet(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
             }
         }
         .accessibilityIdentifier("FruitListVStackItems")
@@ -64,22 +62,6 @@ struct FruitListView: View {
 
 struct FruitView_Previews: PreviewProvider {
     static var previews: some View {
-        let fruitManager: FruitDataManager = .init()
-        
-        let previewStore: AppStore = {
-            let store = AppStore.preview
-            fruitManager.fetchFruitsFromFile(fileName: "MockFruits", completion: { result in
-                switch result {
-                case .success(let fruits):
-                    print(fruits.count)
-                    store.dispatch(.setFruits(fruits))
-                case .failure(_):
-                    break
-                }
-            })
-            return store
-        }()
-        
-        return FruitListView().environmentObject(previewStore)
+        return FruitListView().environmentObject(AppStore.preview)
     }
 }
