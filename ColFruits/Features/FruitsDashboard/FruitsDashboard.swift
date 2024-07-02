@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FruitsDashboard: View {
     @EnvironmentObject var store: AppStore
+    @Binding var isPresented: Bool
+    @Binding var selectedFruitIndex: Int?
     
     var body: some View {
         ScrollView {
@@ -19,7 +21,7 @@ struct FruitsDashboard: View {
                 ScreenTitleView(title: "Select one fruit", size: 24, font: .title2)
                     .padding(.bottom, 4)
                     .accessibilityIdentifier("SubTitleTextView")
-                FruitListView()
+                FruitListView(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
             }
         }
     }
@@ -27,6 +29,9 @@ struct FruitsDashboard: View {
 
 struct FruitsDashboard_Previews: PreviewProvider {
     static var previews: some View {
+        @State var isPresented: Bool = false
+        @State var selectedFruitIndex: Int? = 0
+        
         HomeView().environmentObject(AppStore.preview)
     }
 }
