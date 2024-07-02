@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct FruitListView: View {
-    @ObservedObject var fruitList: FruitDataManager = .init()
     @EnvironmentObject var store: AppStore
-    @State private var isPresented: Bool = false
-    @State private var selectedFruitIndex: Int? = nil
+    @Binding var isPresented: Bool
+    @Binding var selectedFruitIndex: Int?
     private let numberOfColumns: Int = 2
+    var fruitListManager: FruitDataManager = FruitDataManager()
     
     var body: some View {
         ZStack {
@@ -36,13 +36,10 @@ struct FruitListView: View {
                     }
                 } 
             }
-            if isPresented {
-                FruitBottomSheet(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
-            }
         }
         .accessibilityIdentifier("FruitListVStackItems")
         .onAppear {
-            fruitList.fetchFruitsFromFile { result in
+            fruitListManager.fetchFruitsFromFile { result in
                 switch result {
                 case .success(let fruits):
                     print(fruits.count)
@@ -62,6 +59,9 @@ struct FruitListView: View {
 
 struct FruitView_Previews: PreviewProvider {
     static var previews: some View {
-        return FruitListView().environmentObject(AppStore.preview)
+        @State var isPresented: Bool = true
+        @State var selectedFruitIndex: Int? = 0
+    
+        return FruitListView(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex).environmentObject(AppStore.preview)
     }
 }
