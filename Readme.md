@@ -4,11 +4,15 @@
 
 Beggining carousel:
 
-![](GifsDemo/DemoCarousel.gif)
+![](GifsDemo/Carousel.gif)
 
-Dashboard home (Now, it's just showing loading indicators):
+Dashboard home - fruit list:
 
-![](GifsDemo/DemoDashboardHome.gif)
+![](GifsDemo/FruitList.gif)
+
+Tooltip that shows each fruit description:
+
+![](GifsDemo/Tooltip.gif)
 
 ## Code structure:
 
