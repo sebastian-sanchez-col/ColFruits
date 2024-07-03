@@ -18,6 +18,7 @@ public struct DynamicHeightBottomSheet<Content: View>: View {
     @State private var bottomSheetHeight: CGFloat = 0
     @GestureState private var translation: CGFloat = 0
     @Binding var isPresented: Bool
+    @Binding var imageLoadedSize: CGFloat
     
     let content: Content
     let headingForLargeContent: String
@@ -38,11 +39,13 @@ public struct DynamicHeightBottomSheet<Content: View>: View {
     
     public init(
         isPresented: Binding<Bool>,
+        imageLoadedSize: Binding<CGFloat>,
         headingForLargeContent: String = "",
         @ViewBuilder content: () -> Content,
         openAction: (() -> Void)? = nil
     ) {
         self._isPresented = isPresented
+        self._imageLoadedSize = imageLoadedSize
         self.content = content()
         self.openAction = openAction
         self.headingForLargeContent = headingForLargeContent
@@ -108,7 +111,7 @@ public struct DynamicHeightBottomSheet<Content: View>: View {
                 }
             }
             .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - topSafeArea, alignment: .top)
-            .offset(y: max(yOffset + self.translation, 0))
+            .offset(y: max(yOffset - imageLoadedSize + self.translation, 0))
             .animation(.linear(duration: 0.25))
             .onAppear {
                 openAction?()
@@ -160,7 +163,8 @@ struct DynamicHeightBottomSheet_Previews: PreviewProvider {
         
         var body: some View {
             DynamicHeightBottomSheet(
-                isPresented: $isPresented,
+                isPresented: $isPresented, 
+                imageLoadedSize: .constant(0),
                 headingForLargeContent: "Large Content Heading"
             ) {
                 VStack {
