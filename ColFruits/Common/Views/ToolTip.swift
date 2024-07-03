@@ -9,11 +9,16 @@ import SwiftUI
 import Combine
 
 public struct ToolTipBottomSheet: View {
+    @State var imageLoadedSize: CGFloat = 0
     @Binding var isPresented: Bool
     @Binding var header: String
+    @Binding var imageURL: URL?
     @Binding var bodyText: String
     @Binding var buttonTitle: String
     
+    // MARK: - Private properties -
+    private var imageMargin: CGFloat = 20
+    private var imageHeight: CGFloat = 350
     private let openAction: (() -> Void)?
     
     enum VoiceoverFocusArea: Hashable {
@@ -24,13 +29,14 @@ public struct ToolTipBottomSheet: View {
     
     public init (
         isPresented: Binding<Bool>,
-        imageURL: Binding<String?>,
+        imageURL: Binding<URL?>,
         header: Binding<String>,
         bodyText: Binding<String>,
         buttonTitle: Binding<String>,
         openAction: (() -> Void)? = nil
     ) {
         _isPresented = isPresented
+        _imageURL = imageURL
         _header = header
         _bodyText = bodyText
         _buttonTitle = buttonTitle
@@ -38,8 +44,23 @@ public struct ToolTipBottomSheet: View {
     }
     
     public var body: some View {
-        DynamicHeightBottomSheet(isPresented: $isPresented) {
+        DynamicHeightBottomSheet(isPresented: $isPresented, imageLoadedSize: $imageLoadedSize) {
             VStack(alignment: .leading) {
+                if let url: URL = imageURL {
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(7)
+                            .onAppear() {
+                                updateBottomSheetSize()
+                            }
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 350, height: imageHeight)
+                                       
+                }
                 Text(header)
                     .font(.title2)
                     .accessibilityElement()
@@ -55,8 +76,10 @@ public struct ToolTipBottomSheet: View {
                 Button(buttonTitle) {
                     isPresented = false
                 }
+                Spacer()
+                    .frame(height: 30)
             }
-            .padding([.leading, .top, .trailing], 30)
+            .padding([.leading, .trailing], 30)
             .padding(.bottom, 15)
             .background(Color.white)
             .shadow(radius: 10)
@@ -71,8 +94,11 @@ public struct ToolTipBottomSheet: View {
         }
         .padding(.bottom, 30)
     }
+    
+    func updateBottomSheetSize() {
+        self.imageLoadedSize = imageHeight + imageMargin
+    }
 }
-
 
 struct ToolTipBottomSheet_Previews: PreviewProvider {
     static var previews: some View {

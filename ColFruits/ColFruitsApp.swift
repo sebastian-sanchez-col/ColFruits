@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct ColFruitsApp: App {
+struct ColFruitsApp: App {    
     let store = AppStore(initial: AppState(), reducer: AppReducer)
     
     var body: some Scene {

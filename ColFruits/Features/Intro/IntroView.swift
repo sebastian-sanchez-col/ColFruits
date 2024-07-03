@@ -40,7 +40,7 @@ struct IntroView: View {
                     }
                 }
                 .fullScreenCover(isPresented: $isLastPage) {
-                    HomeView()
+                    HomeView().environmentObject(store)
                 }
                 Button(action: {
                     if currentPage >= 3 {
@@ -60,6 +60,6 @@ struct IntroView: View {
 
 struct IntroView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroView()
+        IntroView().environmentObject(AppStore.preview)
     }
 }

@@ -11,6 +11,7 @@ struct FruitBottomSheet: View {
     @EnvironmentObject var store: AppStore
     @Binding var isPresented: Bool
     @Binding var selectedFruitIndex: Int?
+    @State var imageURL: URL?
     
     var body: some View {
         VStack {
@@ -20,35 +21,33 @@ struct FruitBottomSheet: View {
                         let fruit: FruitModel = store.state.fruits[selectedFruitIndex]
                         ToolTipBottomSheet(
                             isPresented: $isPresented,
-                            imageURL: .constant(fruit.imageURL),
+                            imageURL: .constant(imageURL),
                             header: .constant(fruit.name),
                             bodyText: .constant(fruit.description),
                             buttonTitle: .constant("Close")
                         )
+                        .onAppear() {
+                            loadImage(imageAddress: fruit.imageAddress)
+                        }
                     }
                 }
             }
         }
+    }
+    
+    func loadImage(imageAddress: String?) {
+        guard let imageAddress else { return }
+        imageURL = URL(string: imageAddress)
     }
 }
 
 struct FruitBottomSheet_Previews: PreviewProvider {
     static var previews: some View {
         @State var isPresented: Bool = true
-        @State var selectedFruitIndex: Int? = 1
-        
-        let mockFruits: [FruitModel] = [
-            FruitModel(id: "1", name: "Apple", description: "A juicy fruit."),
-            FruitModel(id: "2", name: "Banana", description: "A yellow fruit.")
-        ]
-        
-        let previewStore: AppStore = {
-            let store = AppStore.preview
-            store.dispatch(.setFruits(mockFruits))
-            return store
-        }()
+        @State var selectedFruitIndex: Int? = 0
         
         return FruitBottomSheet(isPresented: $isPresented, selectedFruitIndex: $selectedFruitIndex)
-            .environmentObject(previewStore)
+            .environmentObject(AppStore.preview)
     }
 }
+	
