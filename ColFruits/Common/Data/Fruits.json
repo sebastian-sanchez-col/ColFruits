@@ -2,73 +2,73 @@
     {
         "id": "fruit-1",
         "name": "Dragon Fruit (Pitaya)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhu4fRz-sk8guszPFDBbrXQhg5tZ7Hj9dnUOR6TeryEGjiGSD7F0hQo5_fTzMA4dsNw2aJuHFCv2ofIeMa67bInOd9ELrxEEwrnw9Mix-d0nDyuz_CLdunqN7GBi96bkPkP9XGgyvaSWleNct7GLtT31fJlhnfh_NV7fG8F3rnU_zqF7oZbXF_-DuGpW9VM/s1185/DragonFruit.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhu4fRz-sk8guszPFDBbrXQhg5tZ7Hj9dnUOR6TeryEGjiGSD7F0hQo5_fTzMA4dsNw2aJuHFCv2ofIeMa67bInOd9ELrxEEwrnw9Mix-d0nDyuz_CLdunqN7GBi96bkPkP9XGgyvaSWleNct7GLtT31fJlhnfh_NV7fG8F3rnU_zqF7oZbXF_-DuGpW9VM/s1185/DragonFruit.jpg",
         "description": "Known for its striking appearance and mildly sweet taste, pitaya is a popular choice for smoothies and desserts."
     },
     {
         "id": "fruit-2",
         "name": "Naranjilla (Lulo)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjamXyftizHum9gjipJDzG8PCwqXj4J_h8dcr1IPI7tJbDOIhwZ7VxqywT6f-sLUU86UrblSX3x6eL647kprktQYI8BPSv5M6VMRfGpYaZoiAGwLQqZIgY5fJrDzcSuaDM7vQkqKt0ci9B_vcuMM-BPXCog2NuNFHxCu-2r7T8gFNLOyzIEREZL3vdoI1Rj/s1500/Naranjilla.webp",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjamXyftizHum9gjipJDzG8PCwqXj4J_h8dcr1IPI7tJbDOIhwZ7VxqywT6f-sLUU86UrblSX3x6eL647kprktQYI8BPSv5M6VMRfGpYaZoiAGwLQqZIgY5fJrDzcSuaDM7vQkqKt0ci9B_vcuMM-BPXCog2NuNFHxCu-2r7T8gFNLOyzIEREZL3vdoI1Rj/s1500/Naranjilla.webp",
         "description": "This fruit has a tangy, citrus-like flavor and is often used to make refreshing beverages. Its unique taste makes it a favorite in Colombian cuisine."
     },
     {
         "id": "fruit-3",
         "name": "Pineapple Guava (Feijoa)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLtDDsKhVFqMAaIIV325J-jCGNKpYCqtELGyrTMP6PjK50vh8pKfJ3J2acq8Xyv_AW0OMPmxhahVkJBqbj1Mc0U3I3CnFlOoPkJg85OrtmHcxbjTV8X2OlZST9mzYvLhclgrC-Tok8L3npZC6AUs8MEQf9NtgLvqSOHALLPWuNW3B6zykda-IJMNt4Cz5c/s800/Feijoa.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLtDDsKhVFqMAaIIV325J-jCGNKpYCqtELGyrTMP6PjK50vh8pKfJ3J2acq8Xyv_AW0OMPmxhahVkJBqbj1Mc0U3I3CnFlOoPkJg85OrtmHcxbjTV8X2OlZST9mzYvLhclgrC-Tok8L3npZC6AUs8MEQf9NtgLvqSOHALLPWuNW3B6zykda-IJMNt4Cz5c/s800/Feijoa.jpg",
         "description": "With a flavor that combines pineapple and guava, feijoa is enjoyed fresh or in jams and desserts."
     },
     {
         "id": "fruit-4",
         "name": "Peach Palm Fruit (Chontaduro)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh99TZVVUHIKMZ98_m1HJ1VIaDIMCmrVxhU5utG6oVt0fjfLA2g5GN9E3z0FD5Ly091YPhj_55u4odkfgTBt6eURYL-uFAukxXgJaadePcOIu9ClDdcygmQWXHvpBxfB-qI83ioCcN2dteEi5V-cmiJt1DXDaNlLWJup41lb2QNPUmwCGvDaQ-gxpFuDpJv/s1200/PeachPalmFruit.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh99TZVVUHIKMZ98_m1HJ1VIaDIMCmrVxhU5utG6oVt0fjfLA2g5GN9E3z0FD5Ly091YPhj_55u4odkfgTBt6eURYL-uFAukxXgJaadePcOIu9ClDdcygmQWXHvpBxfB-qI83ioCcN2dteEi5V-cmiJt1DXDaNlLWJup41lb2QNPUmwCGvDaQ-gxpFuDpJv/s1200/PeachPalmFruit.jpg",
         "description": "This nutritious fruit is commonly eaten boiled and salted or mixed with honey. It has a starchy texture and a slightly sweet taste. Additionally, chontaduro is believed to have aphrodisiac properties."
     },
     {
         "id": "fruit-5",
         "name": "Passion Fruit (Maracuyá)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqYJnmil3CFnyZoNjtuZ87t5TNWmkhOJOSa0IwQFAl0Ck9cfZb92D-AWUkRq51Gtzc0V_oIuo5CrnJMkzQPcQlDxXhtiMfRzp5OBtiP12-Rx9LjTjBAj17oxvchNP0cTRJq6Wyca5LMd-_pP_KoZKB0ADaDmmzjHiuIxf5Sy9ywdwXnA47CzRKoLeUV0Ud/s500/PassionFruit.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqYJnmil3CFnyZoNjtuZ87t5TNWmkhOJOSa0IwQFAl0Ck9cfZb92D-AWUkRq51Gtzc0V_oIuo5CrnJMkzQPcQlDxXhtiMfRzp5OBtiP12-Rx9LjTjBAj17oxvchNP0cTRJq6Wyca5LMd-_pP_KoZKB0ADaDmmzjHiuIxf5Sy9ywdwXnA47CzRKoLeUV0Ud/s500/PassionFruit.jpg",
         "description": "Known for its aromatic, tangy pulp, passion fruit is used in juices, desserts, and sauces. Its refreshing taste makes it a favorite in tropical drinks."
     },
     {
         "id": "fruit-6",
         "name": "Soursop (Guanábana)",        
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyzQ4rKvPQYvNlJvAQp5paUSRZlLiEul4vkxH6M4W4q4LRoYHaEUa6AGirNh8kgqwszUhEoacAGzQ8uS-X46opbXlCvPaLd80yBTsb1K_2ZsmlXsPd5ZgkPmci3IYD2s77rnmO34CBhdxdpyzb8EpJ5WA0nGCdhZmwgC2_SmAgMqdEfRjQ3R9LwKAJcWZW/s1024/Soursop.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyzQ4rKvPQYvNlJvAQp5paUSRZlLiEul4vkxH6M4W4q4LRoYHaEUa6AGirNh8kgqwszUhEoacAGzQ8uS-X46opbXlCvPaLd80yBTsb1K_2ZsmlXsPd5ZgkPmci3IYD2s77rnmO34CBhdxdpyzb8EpJ5WA0nGCdhZmwgC2_SmAgMqdEfRjQ3R9LwKAJcWZW/s1024/Soursop.jpg",
         "description": "With a sweet and tart flavor, soursop is often used in beverages, ice creams, and smoothies. It's also known for its potential health benefits."
     },
     {
         "id": "fruit-7",
         "name": "Tree Tomato (Tomate de Árbol)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5wPiZI63vuZE0pACbQRgrEvJloqg1jcdi26dxVwQ3mlrd-xa3Xz4-6SHXBi5XEA-ZVcqcM6I0ZUE52Lzx-VhcLZbX0_Q0SoLhFZjhdYhavqwtXKDotPRBSkg-ziHVhHE0wxKTgB6mjaKr0qiqKzEAq00JU6sXXNF6W0Usvr_E-Cbo0V1yjn7vYwn3tgM4/s1200/TreeTomato.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5wPiZI63vuZE0pACbQRgrEvJloqg1jcdi26dxVwQ3mlrd-xa3Xz4-6SHXBi5XEA-ZVcqcM6I0ZUE52Lzx-VhcLZbX0_Q0SoLhFZjhdYhavqwtXKDotPRBSkg-ziHVhHE0wxKTgB6mjaKr0qiqKzEAq00JU6sXXNF6W0Usvr_E-Cbo0V1yjn7vYwn3tgM4/s1200/TreeTomato.jpg",
         "description": "This fruit has a sweet and sour taste, making it ideal for juices, sauces, and salads."
     },
     {
         "id": "fruit-8",
         "name": "Spanish Lime (Mamoncillo)",        
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUjh5JDCm3k7FAX4ST_8v6XxEQYUfQEP4JWhOlod3H02WFLarzj-bfnIHv4ChMbV2HqIRsBRJLC2Qz_WDF1tyi0JB3aLhPoten_VF0OZ05MlxAJgUPaLAIUbTzkDdRhzziQ25A1YcpUpzXI5PahQgJXgXVxPDe7kUVbEm_-qFOPuRGrRUraiC6joHLMv1x/s2000/SpanishLime.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUjh5JDCm3k7FAX4ST_8v6XxEQYUfQEP4JWhOlod3H02WFLarzj-bfnIHv4ChMbV2HqIRsBRJLC2Qz_WDF1tyi0JB3aLhPoten_VF0OZ05MlxAJgUPaLAIUbTzkDdRhzziQ25A1YcpUpzXI5PahQgJXgXVxPDe7kUVbEm_-qFOPuRGrRUraiC6joHLMv1x/s2000/SpanishLime.jpg",
         "description": "Similar to lychee, mamoncillo has a tangy-sweet flavor and is enjoyed fresh, often eaten directly from the peel."
     },
     {
         "id": "fruit-9",
         "name": "Borojó",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGSeXq47mlIFvXZTvUNqUUcr09iCKYgovlK6ItmJB8vhin5Ol8Jn2fGOPGKfo6LVJv3N0FqSu_YhzEhxhO5bO37ToZZ2WWk5-NbFGVacIfac3jLWJuJ7Y31F-EB0j17bXw8AYvpJRn9GbEqY0EW4r2FfemYHBLTDP43eq_TfJ4TimkypLs4UYfXgkHn5Jx/s1200/Borojo.jpeg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGSeXq47mlIFvXZTvUNqUUcr09iCKYgovlK6ItmJB8vhin5Ol8Jn2fGOPGKfo6LVJv3N0FqSu_YhzEhxhO5bO37ToZZ2WWk5-NbFGVacIfac3jLWJuJ7Y31F-EB0j17bXw8AYvpJRn9GbEqY0EW4r2FfemYHBLTDP43eq_TfJ4TimkypLs4UYfXgkHn5Jx/s1200/Borojo.jpeg",
         "description": "Known for its high energy content and unique taste, borojó is often used in health drinks and is believed to have aphrodisiac properties."
     },
     {
         "id": "fruit-10",
         "name": "Banana Passion Fruit (Curuba)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1P3GKozgALoJrrq2JC1KtS34brudftQURKskGxSFBs4YKudYf4BSREzodlIrZfHTCYR6BAQSFh0DGo8MAcUDgxM0QTe9mQe0_-yIDMetcocXvpxH1SPc0d1w_hu1_jbDEjKkBsXhc4fhslm482UldYlwauwnIKfKu2dSnmAR0b9shxHOLmQrH_zetffQS/s2800/BananaPassionFruit.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1P3GKozgALoJrrq2JC1KtS34brudftQURKskGxSFBs4YKudYf4BSREzodlIrZfHTCYR6BAQSFh0DGo8MAcUDgxM0QTe9mQe0_-yIDMetcocXvpxH1SPc0d1w_hu1_jbDEjKkBsXhc4fhslm482UldYlwauwnIKfKu2dSnmAR0b9shxHOLmQrH_zetffQS/s2800/BananaPassionFruit.jpg",
         "description": "This fruit has a banana-like texture and a sweet yet tangy flavor, making it perfect for desserts and beverages."
     },
     {
         "id": "fruit-11",
         "name": "Starfruit (Fruta estrella)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0E_02JG6QtR2b9xqIuhofRhOarFrZG_IzUTAM5r1N7HAARC4aULO5c6yE72g2i5l1cRpZ-iiOmhfN6snviRnRcpAxeixwPZUkHGrbZM7sCPbN3DQS_jULgntSovA5552VYrgve2RPF2zLWXeV9nNecsJr84tAwjvq97XYTML0kHLXaZfEPOI5Fc1BkTZ4/s320/star-fruit.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0E_02JG6QtR2b9xqIuhofRhOarFrZG_IzUTAM5r1N7HAARC4aULO5c6yE72g2i5l1cRpZ-iiOmhfN6snviRnRcpAxeixwPZUkHGrbZM7sCPbN3DQS_jULgntSovA5552VYrgve2RPF2zLWXeV9nNecsJr84tAwjvq97XYTML0kHLXaZfEPOI5Fc1BkTZ4/s320/star-fruit.jpg",
         "description": "It is a tropical fruit with a distinctive star shape when sliced. Its flavor balances sweet and tart notes, making it refreshing and unique. Starfruit is rich in vitamin C and antioxidants, contributing to its appeal both in taste and health benefits."
     },
     {
         "id": "fruit-12",
         "name": "Pineapple (Piña)",
-        "imageURL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikOHxZrJluStSjZ34R3jZqxSnxtLBD6RmfMIlXJn_GrSqiCLFZuJcbPXTC4-E6ACVXuh5DF_Sseb9p8kg_4Ec-8tKkelXINjot7RSnpGhuOEawat4y34O5oDlkQME9qv4txOpgh9F4XqFd27TjldGCKNCoG0_FT-Qo63zcknLBsUZWlcHet13v0T_-s9Wu/s764/Pineapple.jpg",
+        "imageAddress": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikOHxZrJluStSjZ34R3jZqxSnxtLBD6RmfMIlXJn_GrSqiCLFZuJcbPXTC4-E6ACVXuh5DF_Sseb9p8kg_4Ec-8tKkelXINjot7RSnpGhuOEawat4y34O5oDlkQME9qv4txOpgh9F4XqFd27TjldGCKNCoG0_FT-Qo63zcknLBsUZWlcHet13v0T_-s9Wu/s764/Pineapple.jpg",
         "description": "It's a juicy, sweet fruit with a spiky crown of leaves and a bumpy, golden rind.  You can enjoy its sunshine flavor in drinks, desserts, or all on its own."
     }
 ]
