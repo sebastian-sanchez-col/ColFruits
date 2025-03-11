@@ -19,13 +19,12 @@ struct FruitBottomSheet: View {
                 if !store.state.fruits.isEmpty {
                     if let selectedFruitIndex: Int = $selectedFruitIndex.wrappedValue {
                         let fruit: FruitModel = store.state.fruits[selectedFruitIndex]
-                        ToolTipBottomSheet(
-                            isPresented: $isPresented,
-                            imageURL: .constant(imageURL),
-                            header: .constant(fruit.name),
-                            bodyText: .constant(fruit.description),
-                            buttonTitle: .constant("Close")
+                        let viewModel: ToolTipBottomSheetViewModel = .init(
+                            imageURL: imageURL, 
+                            headerTitle: fruit.name,
+                            bodyText: fruit.description
                         )
+                        ToolTipBottomSheet(isPresented: $isPresented, toolTipBottomSheetViewModel: viewModel)
                         .onAppear() {
                             loadImage(imageAddress: fruit.imageAddress)
                         }

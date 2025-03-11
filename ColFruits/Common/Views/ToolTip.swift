@@ -11,15 +11,11 @@ import Combine
 public struct ToolTipBottomSheet: View {
     @State var imageLoadedSize: CGFloat = 0
     @Binding var isPresented: Bool
-    @Binding var header: String
-    @Binding var imageURL: URL?
-    @Binding var bodyText: String
-    @Binding var buttonTitle: String
     
     // MARK: - Private properties -
     private var imageMargin: CGFloat = 20
     private var imageHeight: CGFloat = 350
-    private let openAction: (() -> Void)?
+    private var toolTipBottomSheetViewModel: ToolTipBottomSheetViewModel
     
     enum VoiceoverFocusArea: Hashable {
         case header
@@ -29,24 +25,16 @@ public struct ToolTipBottomSheet: View {
     
     public init (
         isPresented: Binding<Bool>,
-        imageURL: Binding<URL?>,
-        header: Binding<String>,
-        bodyText: Binding<String>,
-        buttonTitle: Binding<String>,
-        openAction: (() -> Void)? = nil
+        toolTipBottomSheetViewModel: ToolTipBottomSheetViewModel
     ) {
-        _isPresented = isPresented
-        _imageURL = imageURL
-        _header = header
-        _bodyText = bodyText
-        _buttonTitle = buttonTitle
-        self.openAction = openAction
+        self._isPresented = isPresented
+        self.toolTipBottomSheetViewModel = toolTipBottomSheetViewModel
     }
     
     public var body: some View {
         DynamicHeightBottomSheet(isPresented: $isPresented, imageLoadedSize: $imageLoadedSize) {
             VStack(alignment: .leading) {
-                if let url: URL = imageURL {
+                if let url: URL = toolTipBottomSheetViewModel.imageURL {
                     AsyncImage(url: url) { image in
                         image
                             .resizable()
@@ -61,19 +49,30 @@ public struct ToolTipBottomSheet: View {
                     .frame(width: 350, height: imageHeight)
                                        
                 }
-                Text(header)
-                    .font(.title2)
-                    .accessibilityElement()
-                    .accessibilityLabel(header)
+                HStack {
+                    Text(toolTipBottomSheetViewModel.headerTitle)
+                        .font(.title2)
+                        .accessibilityElement()
+                        .accessibilityLabel(toolTipBottomSheetViewModel.headerTitle)
+                    if let informativeButtonAction: (() -> Void) = toolTipBottomSheetViewModel.informativeButtonAction {
+                        TextButton(
+                            text: toolTipBottomSheetViewModel.informativeButtonTitle ?? "Close",
+                            image: Image("right-chevron"),
+                            action: toolTipBottomSheetViewModel.informativeButtonAction,
+                            alignment: .right
+                        )
+                    }
+                }
+                
                 Spacer()
                     .frame(height: 12)
-                Text(bodyText)
+                Text(toolTipBottomSheetViewModel.bodyText)
                     .font(.title3)
                     .accessibilityElement()
-                    .accessibilityLabel(bodyText)
+                    .accessibilityLabel(toolTipBottomSheetViewModel.bodyText)
                 Spacer()
                     .frame(height: 30)
-                Button(buttonTitle) {
+                Button(toolTipBottomSheetViewModel.closeButtonTitle ?? "Close") {
                     isPresented = false
                 }
                 Spacer()
@@ -84,7 +83,7 @@ public struct ToolTipBottomSheet: View {
             .background(Color.white)
             .shadow(radius: 10)
         } openAction: {
-            openAction?()
+            toolTipBottomSheetViewModel.openAction?()
         }
         .accessibilityAddTraits(.isModal)
         .onChange(of: isPresented) { newValue in
@@ -107,17 +106,16 @@ struct ToolTipBottomSheet_Previews: PreviewProvider {
 
     struct PreviewWrapper: View {
         @State private var isPresented = true
-        @State private var header = "Sample Header"
-        @State private var bodyText = "This is a sample body text for the tooltip."
-        @State private var buttonTitle = "Close"
+        let toolTipBottomSheetViewModel: ToolTipBottomSheetViewModel = ToolTipBottomSheetViewModel(
+            headerTitle: "Sample Header",
+            bodyText: "This is a sample body text for the tooltip.",
+            closeButtonTitle: "Close"
+        )
         
         var body: some View {
             ToolTipBottomSheet(
                 isPresented: $isPresented,
-                imageURL: .constant(nil),
-                header: $header,
-                bodyText: $bodyText,
-                buttonTitle: $buttonTitle
+                toolTipBottomSheetViewModel: toolTipBottomSheetViewModel
             )
         }
     }

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct IntroView: View {
     @EnvironmentObject var store: AppStore
-    @ObservedObject var viewModel: IntroViewModel = IntroViewModel()
     @State var isLastPage = false
     @State private var currentPage: Int = 1
-
+    
+    private var viewModel: IntroViewModel = IntroViewModel()
+    
     var body: some View {
         ScrollView {
             Spacer()
