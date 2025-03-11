@@ -31,8 +31,10 @@
 		9C0E1B9F2BEA967A00E05C81 /* Fruits.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C0E1B9E2BEA967A00E05C81 /* Fruits.json */; };
 		9C6A39892BF2BB5D004A7961 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A39882BF2BB5D004A7961 /* Extension+View.swift */; };
 		9C6A398B2BF2C3E9004A7961 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6A398A2BF2C3E9004A7961 /* APIEndpoints.swift */; };
+		9CA90A212C37372600A4276D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA90A202C37372600A4276D /* TextButton.swift */; };
 		9CA9D90E2BDACA56005EA1CE /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 9CA9D90D2BDACA56005EA1CE /* Readme.md */; };
 		9CB74CDF2C067F9E00331B40 /* EnvironmentValuesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB74CDE2C067F9E00331B40 /* EnvironmentValuesExtensions.swift */; };
+		9CBBD5BA2C38332100BB0CC8 /* ToolTipBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBBD5B92C38332100BB0CC8 /* ToolTipBottomSheetViewModel.swift */; };
 		9CBED1F82C052F3F00153D59 /* ToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBED1F72C052F3F00153D59 /* ToolTip.swift */; };
 		9CBED1FA2C05349500153D59 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBED1F92C05349500153D59 /* BottomSheet.swift */; };
 		9CC4CB152BEA590600B2C774 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB142BEA590600B2C774 /* AppState.swift */; };
@@ -91,8 +93,10 @@
 		9C0E1B9E2BEA967A00E05C81 /* Fruits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fruits.json; sourceTree = "<group>"; };
 		9C6A39882BF2BB5D004A7961 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		9C6A398A2BF2C3E9004A7961 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		9CA90A202C37372600A4276D /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		9CA9D90D2BDACA56005EA1CE /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		9CB74CDE2C067F9E00331B40 /* EnvironmentValuesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValuesExtensions.swift; sourceTree = "<group>"; };
+		9CBBD5B92C38332100BB0CC8 /* ToolTipBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTipBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		9CBED1F72C052F3F00153D59 /* ToolTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTip.swift; sourceTree = "<group>"; };
 		9CBED1F92C05349500153D59 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		9CC4CB142BEA590600B2C774 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				9C0E1B9B2BEA958C00E05C81 /* Data */,
 				9C6A39872BF2BB43004A7961 /* Extensions */,
 				9CCA47C42BE83751004B606B /* Views */,
+				9CBBD5B82C3832E600BB0CC8 /* ViewModels */,
 				9CC4CB132BEA58E000B2C774 /* State */,
 				0027D2682A0AA606003E16E5 /* Utils */,
 			);
@@ -299,6 +304,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9CBBD5B82C3832E600BB0CC8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9CBBD5B92C38332100BB0CC8 /* ToolTipBottomSheetViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		9CC4CB132BEA58E000B2C774 /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +338,7 @@
 				9CBED1F72C052F3F00153D59 /* ToolTip.swift */,
 				9CBED1F92C05349500153D59 /* BottomSheet.swift */,
 				9CCA47C22BE835A1004B606B /* ScreenTitleView.swift */,
+				9CA90A202C37372600A4276D /* TextButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -476,10 +490,12 @@
 			files = (
 				000807332A5DC05300396F3B /* HomeViewModel.swift in Sources */,
 				9C6A39892BF2BB5D004A7961 /* Extension+View.swift in Sources */,
+				9CBBD5BA2C38332100BB0CC8 /* ToolTipBottomSheetViewModel.swift in Sources */,
 				000807292A5DBD6400396F3B /* AppStoreExtension.swift in Sources */,
 				9CC58A7B2C03EB510036BF76 /* FruitsDashboard.swift in Sources */,
 				9C6A398B2BF2C3E9004A7961 /* APIEndpoints.swift in Sources */,
 				005800F02A5F4818007C64A1 /* IntroView.swift in Sources */,
+				9CA90A212C37372600A4276D /* TextButton.swift in Sources */,
 				9CECC39C2BEEB987008B89CE /* FruitCardView.swift in Sources */,
 				00E63F7C2A05906600D26326 /* SlideView.swift in Sources */,
 				9CB74CDF2C067F9E00331B40 /* EnvironmentValuesExtensions.swift in Sources */,
